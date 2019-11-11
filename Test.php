@@ -1,8 +1,9 @@
 <?php
 include 'inc/header.php';
 ?>
-<!-- Sidebar -->
+
 <div class="row">
+    <!-- Sidebar -->
     <nav class="sidebar col-2 sidebar">
         <div class="sidebar-sticky nav flex-column">
             <a class="nav-item h5"> Categorieën</a>
