@@ -7,6 +7,18 @@
     <title>Voorpagina</title>
 </head>
 <body>
-<h1>Hello, world!</h1>
+<?php
 
+?>
+<nav class="nav justify-content-center">
+    <a class="nav-link active" href="#">Active</a>
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+</nav>
+<?php
+include ('Bladeren.php');
+bladeren();
+?>
+</body>
 </html>
