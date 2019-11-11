@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,3 +7,8 @@
     <title>Dit is voor de les</title>
 </head>
 </html>
+=======
+<?php
+Print("haloo");
+print("tests");print("y");
+>>>>>>> 2dc63911cb8e9a1bb519c33ab471886a4e1620f5
