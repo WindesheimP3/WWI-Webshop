@@ -1,5 +1,5 @@
 <?php
-$title = "banaan";
+$title = "FAQ";
 include 'inc/header.php';
 ?>
 <!-- Zorgt er voor dat de sidebar en webcontent in 1 rij staat -->
