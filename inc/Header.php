@@ -14,11 +14,11 @@
 <body>
 <header>
     <nav class="nav justify-content-center">
-        <a class="nav-brand col-10 align-center h1">WWI-Webshop</a>
+        <a class="nav-brand col-10 align-center h1" href="index.php">WWI-Webshop</a>
         <a class="nav-link col-1">Verlanglijst</a>
         <a class="nav-link col-1 small">Mijn profiel</a>
         <a class="col-2"></a>
-        <a class="nav-link col-1" href="#">Home</a>
+        <a class="nav-link col-1" href="index.php">Home</a>
         <a class="nav-link col-1" href="#">Pagina 1</a>
         <a class="nav-link col-1" href="#">Pagina 2</a>
         <a class="nav-link col-1" href="#">Pagina 3</a>
