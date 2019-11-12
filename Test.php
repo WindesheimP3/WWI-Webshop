@@ -1,19 +1,13 @@
 <?php
+$title = "banaan";
 include 'inc/header.php';
 ?>
-
+<!-- Zorgt er voor dat de sidebar en webcontent in 1 rij staat -->
 <div class="row">
-    <!-- Sidebar -->
-    <nav class="sidebar col-2 sidebar">
-        <div class="sidebar-sticky nav flex-column">
-            <a class="nav-item h5"> Categorieën</a>
-            <a class="nav-item" href="#">appels</a>
-            <a class="nav-item" href="#">peren</a>
-            <a class="nav-item" href="#">bananen</a>
-            <a class="nav-item" href="#">piemels</a>
-
-        </div>
-    </nav>
+    <?php
+    // Sidebar
+    include 'inc/sidebar.php'
+    ?>
     <div class="col-8">
         <!-- WEBPAGE CONTENT -->
         <h1 class="text-left">Heading 1</h1>
