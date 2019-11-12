@@ -23,7 +23,7 @@
         <a class="nav-link col-1" href="#">Pagina 2</a>
         <a class="nav-link col-1" href="#">Pagina 3</a>
         <a class="nav-link col-1" href="#">Aanbieding</a>
-        <a class="nav-link col-4" href="#"><?php include "inc/search.php"?></a>
+        <a class="nav-link col-4" href="#">Search</a>
         <a class="nav-link col-1" href="#">Winkelmand</a>
     </nav>
 </header>

@@ -1,4 +1,4 @@
-<form method="post" action="search-result.php"  id="searchform">
+<form method="post" action="search.php?go"  id="searchform">
     <input type="text" name="name">
     <input  type="submit" name="submit" value="Search">
 </form>
@@ -25,6 +25,8 @@ if(isset($_POST['submit'])){ //kijken of het gesubmit kan worden
                 }
             }
             }
+    } else{
+        print ("<p>Please enter a search query</p>");
     }
 ?>
 
