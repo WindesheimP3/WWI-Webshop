@@ -10,6 +10,8 @@ include 'inc/Header.php';
     include 'sql-statements/Database-Connectie.php';
     ?>
     <div class="col-8">
+
+
         <!-- WEBPAGE CONTENT -->
         <div class="col-1"></div>
         <p class="text-left"><br> <b><?php

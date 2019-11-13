@@ -39,7 +39,7 @@
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         $ItemID = $row["StockItemID"];
         $ItemName = $row["StockItemName"];
-        print("Productcode &nbsp" . $row["StockItemID"] . ": &nbsp" . $row["StockItemName"] . "<br>");}
+        print("<a href='productpagina1.php?StockItemID=". $ItemID . "'>Productcode &nbsp" . $row["StockItemID"] . ": &nbsp" . $row["StockItemName"] . "<br>");}
         mysqli_free_result($result);
         ?>
 
