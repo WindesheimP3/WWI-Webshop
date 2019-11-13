@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffdbab64-08e0-4339-a6fd-79d7ec608a93" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Colin-test/.idea/php.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Productpagina.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/Database-Sluit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Productpagina1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Productpagina1.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +24,12 @@
   <component name="ProjectId" id="1TVSPQwHIQXeqTsIQ6mtV3LBSIK" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/inc" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/inc" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -45,6 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573543745005</updated>
       <workItem from="1573543746285" duration="2000" />
+      <workItem from="1573640256978" duration="1724000" />
     </task>
     <servers />
   </component>
@@ -56,7 +66,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
