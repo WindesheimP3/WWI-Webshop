@@ -7,18 +7,21 @@ include 'inc/Header.php';
     <?php
     // Sidebar
     include 'inc/Sidebar.php';
+    // Database openen
     include 'inc/Database-Connectie.php';
     ?>
     <div class="col-8">
         <!-- WEBPAGE CONTENT -->
         <div class="col-1"></div>
         <?php
+        // Selecteer het stockitemID van de catalog pagina
         $StockItemID = $_GET['StockItemID'];
         $sql = "SELECT * FROM stockitems WHERE StockItemID =?";
         $statement = mysqli_prepare($connect, $sql);
         mysqli_stmt_bind_param($statement, 'i', $StockItemID);
         mysqli_stmt_execute($statement);
         $result = mysqli_stmt_get_result($statement);
+        // Hier worden alle verschillende kolommen opgehaald uit de database en weergegeven op de webshop
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             $ItemName = $row["StockItemName"];
             $ItemSize = $row["Size"];

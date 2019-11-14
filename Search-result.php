@@ -16,9 +16,9 @@ include 'inc/database-connectie.php';
             if (preg_match("/^([A-Za-z]+)/", $_GET['name'])) {
                 $name = $_GET['name']; //verbinden met database
                 $name1 = $name;
-                $sql = "SELECT StockItemName, StockItemID FROM stockitems WHERE StockItemName LIKE '%?%'";
-                $statement = mysqli_prepare($connect, "SELECT StockItemName, StockItemID FROM stockitems WHERE StockItemName LIKE '%?%'");
-                mysqli_stmt_bind_param($statement, "s", $name1);
+                $sql = "SELECT StockItemName, StockItemID FROM stockitems WHERE StockItemName LIKE '%{$name1}%'";
+                $statement = mysqli_prepare($connect, "SELECT StockItemName, StockItemID FROM stockitems WHERE StockItemName LIKE '%{$name1}%' ");
+                mysqli_stmt_bind_param($statement, "ss", $name1);
                 mysqli_stmt_execute($statement);
                 $result = mysqli_stmt_get_result($statement);
                 while ($row = mysqli_fetch_array($result)) {
