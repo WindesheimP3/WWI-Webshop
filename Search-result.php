@@ -33,6 +33,7 @@ include 'inc/database-connectie.php';
                 while ($row = mysqli_fetch_array($result)) {
                     $SIname = $row['StockItemName'];
                     $SIID = $row['StockItemID'];
+<<<<<<< HEAD
                     print (" 
 <div class='col-4'>    
 <div class=\"card\" style=\"width: 18rem;\">
@@ -44,6 +45,10 @@ include 'inc/database-connectie.php';
 </div>
 </div>
 ");
+=======
+                    print ("<li><a href='productpagina1.php?StockItemID=$SIID'> Productcode $SIID - $SIname </a></li>");
+                    print ("</ul>");
+>>>>>>> 3007ff1d2a180af95e529527337f1b9e0cd7d351
                 }
             }
         }
