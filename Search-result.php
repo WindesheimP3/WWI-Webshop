@@ -10,6 +10,10 @@ include 'inc/database-connectie.php';
     include 'inc/sidebar.php'
     ?>
     <div class="col-8">
+        <div class="row">
+            <h1>Zoekresultaten</h1>
+        </div>
+        <div class="row">
         <!-- WEBPAGE CONTENT -->
         <?php
         if(isset($_GET['submit'])) { //kijken of het gesubmit kan worden
@@ -24,18 +28,27 @@ include 'inc/database-connectie.php';
                             OR MarketingComments LIKE '%{$name1}%' 
                             ORDER BY StockItemID");
                 $statement = mysqli_prepare($connect, $sql);
-                mysqli_stmt_bind_param($statement, "ss", $name1, $name1);
                 mysqli_stmt_execute($statement);
                 $result = mysqli_stmt_get_result($statement);
                 while ($row = mysqli_fetch_array($result)) {
                     $SIname = $row['StockItemName'];
                     $SIID = $row['StockItemID'];
-                    print "<li>" . "<a  href=\"search.php?id=\">" . "Productcode " . $SIID . " - " . $SIname . "</a></li>";
-                    print ("</ul>");
+                    print (" 
+<div class='col-4'>    
+<div class=\"card\" style=\"width: 18rem;\">
+<div class=\"card-body\">
+<h5 class=\"card-title\">$SIname</h5>
+<p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<a href=\"productpagina1.php?StockItemID=$SIID\" class=\"btn btn-primary\">Go somewhere</a>
+</div> 
+</div>
+</div>
+");
                 }
             }
         }
         ?>
+        </div>
     </div>
 </div>
 
