@@ -7,12 +7,14 @@ include 'inc/Header.php';
     <?php
     // Sidebar
     include 'inc/Sidebar.php';
+    // Database openen
     include 'inc/Database-Connectie.php';
     ?>
     <div class="col-8">
         <!-- WEBPAGE CONTENT -->
         <div class="col-1"></div>
         <?php
+        // Selecteer het stockitemID van de catalog pagina
         $StockItemID = $_GET['StockItemID'];
         $sql = "SELECT * FROM stockitems WHERE StockItemID =?";
         $statement = mysqli_prepare($connect, $sql);
