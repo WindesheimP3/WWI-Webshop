@@ -11,7 +11,7 @@ include 'inc/database-connectie.php';
     ?>
     <div class="col-8">
         <div class="row">
-            <h1>Zoekresultaten</h1>
+            <h1>&nbsp Zoekresultaten</h1>
         </div>
         <div class="row">
         <!-- WEBPAGE CONTENT -->

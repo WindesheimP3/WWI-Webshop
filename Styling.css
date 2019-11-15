@@ -1,0 +1,30 @@
+#achtergrond {
+    background-color: ivory;
+}
+
+#Headerbalk {
+    background-color: darkblue;
+    border-bottom-style: solid;
+    border-color: grey;
+}
+
+#Footer {
+    background-color: darkblue;
+}
+
+a {
+    color: white
+}
+
+#Sidebar {
+    background-color: #AAAAAA;
+    padding-left: 5px;
+    padding-right: 15px;
+    border-right-style: inset;
+    border-color: grey;
+
+}
+.nav-item {
+    color: darkblue;
+    font-size: 18px;
+}
