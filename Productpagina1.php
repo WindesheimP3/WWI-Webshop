@@ -16,8 +16,7 @@ include 'inc/Header.php';
         <?php
         // Selecteer het stockitemID van de catalog pagina
         $StockItemID = $_GET['StockItemID'];
-        $sql = "SELECT * FROM stockitems JOIN stockitemholdings ON stockitems.StockItemID = stockitemholdings.StockItemID WHERE stockitems.StockItemID =?";
-        // $sql = "SELECT * FROM stockitems WHERE StockItemID =?";
+        $sql = "SELECT * FROM stockitems WHERE StockItemID =?";
         $statement = mysqli_prepare($connect, $sql);
         mysqli_stmt_bind_param($statement, 'i', $StockItemID);
         mysqli_stmt_execute($statement);
@@ -26,7 +25,6 @@ include 'inc/Header.php';
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             $ItemName = $row["StockItemName"];
             $ItemSize = $row["Size"];
-            $QuantityOnHand = $row["QuantityOnHand"];
             $RecommendedRetailPrice = $row["RecommendedRetailPrice"];
             $UnitPrice = $row["UnitPrice"];
             $MarketingComments = $row["MarketingComments"];
@@ -35,7 +33,6 @@ include 'inc/Header.php';
             if ($row["Size"] != null){
                 print ("Size: $ItemSize <br>");
             }
-            print ("Quantity on hand: $QuantityOnHand <br>");
             print ("Weight: $TypicalWeightPerUnit kg <br>");
             print ("Recommended price: €$RecommendedRetailPrice <br>");
             print ("Our price: €$UnitPrice <br>");

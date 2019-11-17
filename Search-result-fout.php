@@ -11,7 +11,7 @@ include 'inc/database-connectie.php';
     ?>
     <div class="col-8">
         <div class="row">
-            <h1>&nbsp Zoekresultaten</h1>
+            <h1>Zoekresultaten</h1>
         </div>
         <div class="row">
         <!-- WEBPAGE CONTENT -->
@@ -22,12 +22,13 @@ include 'inc/database-connectie.php';
                 $name1 = $name;
                 $sql = ("SELECT StockItemName, StockItemID 
                             FROM stockitems 
-                            WHERE StockItemName LIKE '%{$name1}%' 
-                            OR StockItemID LIKE '%{$name1}%' 
-                            OR SearchDetails LIKE '%{$name1}%' 
-                            OR MarketingComments LIKE '%{$name1}%' 
+                            WHERE StockItemName LIKE '%?%' 
+                            OR StockItemID LIKE '%?%' 
+                            OR SearchDetails LIKE '%?%' 
+                            OR MarketingComments LIKE '%?%' 
                             ORDER BY StockItemID");
                 $statement = mysqli_prepare($connect, $sql);
+                mysqli_stmt_bind_param($statement, 'siss', $name1, $name1, $name1, $name1);
                 mysqli_stmt_execute($statement);
                 $result = mysqli_stmt_get_result($statement);
                 while ($row = mysqli_fetch_array($result)) {
