@@ -38,7 +38,7 @@ include 'inc/Database-Connectie.php';
 <div class=\"card\" style=\"width: 18rem;\">
 <div class=\"card-body\">
 <h5 class=\"card-title\">$ItemName</h5>
-<p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nunc urna, convallis a dictum quis. </p>
 <a href=\"productpagina1.php?StockItemID=$ItemID\" class=\"btn btn-primary\">Bekijk product!</a>
 </div> 
 </div>
