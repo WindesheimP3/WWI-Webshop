@@ -1,13 +1,14 @@
 <?php
 $title = "banaan";
 include 'inc/header.php';
-include 'inc/database-connectie.php';
+include 'sql-statements/database-connectie.php';
 ?>
 <!-- Zorgt er voor dat de sidebar en webcontent in 1 rij staat -->
 <div class="row">
     <?php
     // Sidebar
-    include 'inc/sidebar.php'
+    include 'inc/sidebar.php';
+    include 'inc/paging-zoek/paging-start.php';
     ?>
     <div class="col-8">
         <div class="row">
@@ -18,18 +19,7 @@ include 'inc/database-connectie.php';
         <?php
         if(isset($_GET['submit'])) { //kijken of het gesubmit kan worden
             if (preg_match("/^([A-Za-z0-9]+)/", $_GET['name'])) {
-                $name = $_GET['name']; //verbinden met database
-                $name1 = $name;
-                $sql = ("SELECT StockItemName, StockItemID 
-                            FROM stockitems 
-                            WHERE StockItemName LIKE '%{$name1}%' 
-                            OR StockItemID LIKE '%{$name1}%' 
-                            OR SearchDetails LIKE '%{$name1}%' 
-                            OR MarketingComments LIKE '%{$name1}%' 
-                            ORDER BY StockItemID");
-                $statement = mysqli_prepare($connect, $sql);
-                mysqli_stmt_execute($statement);
-                $result = mysqli_stmt_get_result($statement);
+                include "sql-statements/search-result/SQL-search.php";
                 while ($row = mysqli_fetch_array($result)) {
                     $SIname = $row['StockItemName'];
                     $SIID = $row['StockItemID'];
@@ -47,11 +37,19 @@ include 'inc/database-connectie.php';
                 }
             }
         }
+
+
         ?>
+        </div>
+        <div class="row">
+            <?php
+            include "inc/paging-zoek/paging-navbar.php"
+            ?>
         </div>
     </div>
 </div>
 
 <?php
+include "sql-statements/database-Sluit.php";
 include 'inc/footer.php';
 ?>

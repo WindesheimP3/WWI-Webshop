@@ -16,43 +16,24 @@ include 'inc/Database-Connectie.php';
         <div class="row">
             <!-- WEBPAGE CONTENT -->
             <?php
-            // gegeven uit voorgaande pagina halen
+            //Variabele header met categorie-naam
             $group = $_GET["StockGroupID"];
-            ?>
-
-            <?php
-            // query maken om categorie te tonen die geselecteerd was
-            $sqlc = "SELECT * FROM stockgroups WHERE StockGroupID =?";
-            $statementc = mysqli_prepare($connect, "SELECT * FROM stockgroups WHERE StockGroupID =?");
-            mysqli_stmt_bind_param($statementc, 'i', $group);
-            mysqli_stmt_execute($statementc);
-            $resultc = mysqli_stmt_get_result($statementc);
-            // print categorie naam in <h1> vorm als header
+            include "inc/paging-categorie/paging-start.php";
+            include "sql-statements/catagorie/SQL-categorieNaam.php";
             while ($row = mysqli_fetch_array($resultc, MYSQLI_ASSOC)) {
                 $StockGroupName = $row["StockGroupName"];
-                print ("<h1>" . $StockGroupName . "</h1>");
+                print ("<h1>&nbsp" . $StockGroupName . "</h1>");
             }
             ?>
         </div>
         <div class="row">
             <div class="card-group">
-
-
-            <br> <br> <br>
-            <?php
-            // query voor het vinden van producten met specifieke categorie
-            $sql = "SELECT * FROM stockitems JOIN stockitemstockgroups on stockitems.StockItemID = stockitemstockgroups.StockItemID WHERE stockitemstockgroups.StockGroupID =?";
-            // vastleggen van de WHERE met de variabel in de link
-            $statement = mysqli_prepare($connect, "SELECT * FROM stockitems JOIN stockitemstockgroups on stockitems.StockItemID = stockitemstockgroups.StockItemID WHERE stockitemstockgroups.StockGroupID =?");
-            mysqli_stmt_bind_param($statement, 'i', $group);
-            mysqli_stmt_execute($statement);
-            // resultaat opstellen
-            $result = mysqli_stmt_get_result($statement);
-            // toont resultaten van voorgaande query
-            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                $ItemID = $row["StockItemID"];
-                $ItemName = $row["StockItemName"];
-                print(" 
+                <?php
+                include "sql-statements/catagorie/SQL-productPerCategorie.php";
+                while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                    $ItemID = $row["StockItemID"];
+                    $ItemName = $row["StockItemName"];
+                    print(" 
 <div class='col-4'>    
 <div class=\"card\" style=\"width: 18rem;\">
 <div class=\"card-body\">
@@ -63,13 +44,19 @@ include 'inc/Database-Connectie.php';
 </div>
 </div>
 ");
-            }
-            mysqli_free_result($result);
-            ?>
-        </div>
+                }
+                ?>
+                <div class="row">
+                    <?php
+                include "inc/paging-categorie/paging-navbar.php";
+                include "sql-statements/database-Sluit.php";
+                ?>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 <?php
 // onderste kant van de pagina: klantenservice etc
 include 'inc/footer.php';

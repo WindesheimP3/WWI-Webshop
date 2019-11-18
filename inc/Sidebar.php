@@ -23,6 +23,5 @@
         <a class="nav-item" href="categorie.php?StockGroupID=9">Toys</a>
         <br>
         <a class="nav-item" href="categorie.php?StockGroupID=10">Packaging Materials</a>
-        <br>
     </div>
 </nav>
