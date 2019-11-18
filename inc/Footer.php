@@ -1,7 +1,7 @@
 </div>
 <footer>
     <!-- Onderste navigatiebar met links naar betreffende pagina -->
-    <nav class="navbar fixed-bottom">
+    <nav class="navbar fixed-bottom" id="Footer">
         <a class="nav-link col-1 text-left" href="over-ons.php">Over ons</a>
         <a class="nav-link col-1 text-left" href="werken-bij.php">Werken bij </a>
         <a class="nav-link col-1 text-left" href="klantenservice.php">Klantenservice</a>

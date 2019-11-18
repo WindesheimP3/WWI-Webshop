@@ -1,6 +1,6 @@
 <!-- Maken van de navigatie bar op de sidebalks met links -->
-<nav class="sidebar col-2 sidebar">
-    <div class="sidebar-sticky nav flex-column">
+<nav class="sidebar col-1.9 sidebar">
+    <div class="sidebar-sticky nav flex-column" id="Sidebar">
         <a class="nav-item h5"> Categorieën</a>
         <br>
         <!-- link voor elke categorie geeft ook een datagegeven aan de categorie pagina om alleen een query te maken zodat alleen producten van deze categorie getoond worden -->
@@ -23,5 +23,6 @@
         <a class="nav-item" href="categorie.php?StockGroupID=9">Toys</a>
         <br>
         <a class="nav-item" href="categorie.php?StockGroupID=10">Packaging Materials</a>
+        <br>
     </div>
 </nav>

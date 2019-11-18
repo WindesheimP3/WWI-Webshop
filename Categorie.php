@@ -70,7 +70,6 @@ include 'inc/Database-Connectie.php';
         </div>
     </div>
 </div>
-
 <?php
 // onderste kant van de pagina: klantenservice etc
 include 'inc/footer.php';
