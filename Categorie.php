@@ -27,6 +27,23 @@ include 'sql-statements/Database-Connectie.php';
             ?>
         </div>
         <div class="row">
+            <div class="col-8"></div>
+            <div class="col-4">
+                <?php
+                $StockGroupID = $_GET['StockGroupID'];
+                ?>
+                <form style="text-align:center;" method="get" action="categorie.php">
+                    <select name="order">
+                        <option value="StockItemName">Name</option>
+                        <option value="UnitPrice ASC">Price low - high</option>
+                        <option value="UnitPrice DESC">Price high - low</option>
+                    </select>
+                    <input type="hidden" name="StockGroupID" value="<?php print($StockGroupID); ?>">
+                    <input type="submit" name="submit" value="Search"><br>
+                </form>
+            </div>
+        </div>
+        <div class="row">
             <div class="card-group">
                 <?php
                 include "sql-statements/catagorie/SQL-productPerCategorie.php";
@@ -51,9 +68,9 @@ include 'sql-statements/Database-Connectie.php';
                         &nbsp &nbsp &nbsp
                     </h5>
                     <?php
-                include "inc/paging-categorie/paging-navbar.php";
-                include "sql-statements/database-Sluit.php";
-                ?>
+                    include "inc/paging-categorie/paging-navbar.php";
+                    include "sql-statements/database-Sluit.php";
+                    ?>
                 </div>
             </div>
         </div>

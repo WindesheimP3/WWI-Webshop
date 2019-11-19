@@ -10,12 +10,29 @@ include 'sql-statements/database-connectie.php';
     include 'inc/sidebar.php';
     include 'inc/paging-zoek/paging-start.php';
     ?>
+    <!-- WEBPAGE CONTENT -->
     <div class="col-8">
         <div class="row">
             <h1>&nbsp Zoekresultaten</h1>
         </div>
         <div class="row">
-        <!-- WEBPAGE CONTENT -->
+            <div class="col-8"></div>
+            <div class="col-4">
+                <?php
+                $name = $_GET['name'];
+                ?>
+            <form style="text-align:center;" method="get" action="search-result.php">
+                <select name="order">
+                    <option value="StockItemName">Name</option>
+                    <option value="UnitPrice ASC">Price low - high</option>
+                    <option value="UnitPrice DESC">Price high - low</option>
+                </select>
+                <input type="hidden" name="name" value="<?php print($name);?>">
+                <input type="submit" name= "submit" value="Search"><br>
+            </form>
+            </div>
+        </div>
+        <div class="row">
         <?php
         if(isset($_GET['submit'])) { //kijken of het gesubmit kan worden
             if (preg_match("/^([A-Za-z0-9]+)/", $_GET['name'])) {
