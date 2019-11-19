@@ -31,7 +31,7 @@
   <component name="ProjectId" id="1TVSPQwHIQXeqTsIQ6mtV3LBSIK" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/inc/Header.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../WP/Notepad.css" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -75,6 +75,7 @@
       <workItem from="1574160709421" duration="88000" />
       <workItem from="1574160809886" duration="30000" />
       <workItem from="1574160855098" duration="73000" />
+      <workItem from="1574165406360" duration="7096000" />
     </task>
     <servers />
   </component>
