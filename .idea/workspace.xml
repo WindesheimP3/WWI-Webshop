@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffdbab64-08e0-4339-a6fd-79d7ec608a93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Productpagina.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/Database-Sluit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Productpagina1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Productpagina1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/Categorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Search-result.php" beforeDir="false" afterPath="$PROJECT_DIR$/Search-result.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql-statements/catagorie/SQL-productPerCategorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/sql-statements/catagorie/SQL-productPerCategorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql-statements/search-result/SQL-search.php" beforeDir="false" afterPath="$PROJECT_DIR$/sql-statements/search-result/SQL-search.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +30,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1TVSPQwHIQXeqTsIQ6mtV3LBSIK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/inc/Header.php" />
@@ -75,6 +77,7 @@
       <workItem from="1574160709421" duration="88000" />
       <workItem from="1574160809886" duration="30000" />
       <workItem from="1574160855098" duration="73000" />
+      <workItem from="1574165348471" duration="4281000" />
     </task>
     <servers />
   </component>

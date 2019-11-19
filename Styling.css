@@ -6,6 +6,7 @@
     background-color: darkblue;
     border-bottom-style: solid;
     border-color: grey;
+    font-style: italic;
 }
 
 #Footer {
@@ -13,16 +14,16 @@
 }
 
 a {
-    color: white
+    color: white;
 }
 
 #Sidebar {
-    background-color: #AAAAAA;
+    background-color: ivory;
     position: relative;
     padding-left: 5px;
-    padding-right: 15px;
+    padding-right: 40px;
     border-right-style: inset;
-    border-color: grey;
+    border-color: lightgrey;
     height: 100%; /* Full-height: remove this if you want "auto" height */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -30,6 +31,18 @@ a {
     bottom: 0;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
+    font-style: italic;
+}
+
+#Sidebar1 {
+    border-style: solid;
+    border-color: darkslategrey;
+    margin-right: 0px;
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 4px;
+    text-align: center;
+
 }
 
 
@@ -38,3 +51,27 @@ a {
     font-size: 18px;
 }
 
+#Zoekknop {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: white;
+}
+
+#Zoektext {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: white;
+}
+
+#searchform {
+    border-style: solid;
+    border-radius: 10px;
+    width: 255px;
+    background-color: white;
+    text-align: center;
+}
+
+#Categorie {
+    font-size: 22px;
+    text-align: center;
+}
