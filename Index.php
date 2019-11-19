@@ -9,6 +9,12 @@ include 'inc/Database-Connectie.php';
     // Sidebar
     include 'inc/sidebar.php'
     ?>
+    <style>
+        #Sidebar {
+            height: 100vh;
+        }
+
+    </style>
     <div class="col-8">
         <!-- WEBPAGE CONTENT -->
         <h1 class="text-left">Heading 1</h1>

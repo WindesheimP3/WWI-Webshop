@@ -47,6 +47,9 @@ include 'inc/Database-Connectie.php';
                 }
                 ?>
                 <div class="row">
+                    <h5>
+                        &nbsp &nbsp &nbsp
+                    </h5>
                     <?php
                 include "inc/paging-categorie/paging-navbar.php";
                 include "sql-statements/database-Sluit.php";
