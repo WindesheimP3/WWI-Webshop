@@ -18,13 +18,23 @@ a {
 
 #Sidebar {
     background-color: #AAAAAA;
+    position: relative;
     padding-left: 5px;
     padding-right: 15px;
     border-right-style: inset;
     border-color: grey;
-
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    bottom: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
 }
+
+
 .nav-item {
     color: darkblue;
     font-size: 18px;
 }
+
