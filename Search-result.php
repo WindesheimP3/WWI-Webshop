@@ -28,8 +28,8 @@ include 'sql-statements/database-connectie.php';
 <div class=\"card\" style=\"width: 18rem;\">
 <div class=\"card-body\">
 <h5 class=\"card-title\">$SIname</h5>
-<p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-<a href=\"productpagina1.php?StockItemID=$SIID\" class=\"btn btn-primary\">Go somewhere</a>
+<p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nunc urna, convallis a dictum quis. </p>
+<a href=\"productpagina1.php?StockItemID=$SIID\" class=\"btn btn-primary\">Bekijk product!</a>
 </div> 
 </div>
 </div>
