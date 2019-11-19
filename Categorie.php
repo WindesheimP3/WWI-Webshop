@@ -3,7 +3,7 @@ $title = "Categorie";
 // bovenste bar van de pagina
 include 'inc/header.php';
 // gelinkte document die de connectie met de database aanlegd
-include 'inc/Database-Connectie.php';
+include 'sql-statements/Database-Connectie.php';
 
 ?>
 <!-- Zorgt er voor dat de sidebar en webcontent in 1 rij staat -->

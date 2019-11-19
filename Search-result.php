@@ -1,5 +1,5 @@
 <?php
-$title = "banaan";
+$title = "Search Results";
 include 'inc/header.php';
 include 'sql-statements/database-connectie.php';
 ?>

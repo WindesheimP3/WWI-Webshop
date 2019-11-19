@@ -1,7 +1,6 @@
 <?php
-$title = "banaan";
+$title = "Home";
 include 'inc/header.php';
-include 'inc/Database-Connectie.php';
 ?>
 <!-- Zorgt er voor dat de sidebar en webcontent in 1 rij staat -->
 <div class="row">
