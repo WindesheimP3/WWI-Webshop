@@ -60,6 +60,7 @@ include 'sql-statements/database-connectie.php';
         ?>
         </div>
         <div class="row">
+            <h5>&nbsp &nbsp &nbsp</h5>
             <?php
             include "inc/paging-zoek/paging-navbar.php"
             ?>
