@@ -1,6 +1,5 @@
 <br>
 <br>
-<br>
 </div>
 <footer>
     <!-- Onderste navigatiebar met links naar betreffende pagina -->
