@@ -17,16 +17,16 @@
     <nav class="nav justify-content-center">
         <a class="nav-brand col-3 align-center h1" href="index.php">WWI-Webshop</a>
         <a class="col-7"></a>
-        <a class="nav-link col-1" href="#">Verlanglijst</a>
-        <a class="nav-link col-1 small" href="#">Mijn profiel</a>
+        <a class="nav-link col-1" href="#">Wishlist</a>
+        <a class="nav-link col-1 small" href="#">My profile</a>
         <a class="col-2"></a>
         <a class="nav-link col-1" href="index.php">Home</a>
-        <a class="nav-link col-1" href="#">Pagina 1</a>
-        <a class="nav-link col-1" href="#">Pagina 2</a>
-        <a class="nav-link col-1" href="#">Pagina 3</a>
-        <a class="nav-link col-1" href="#">Aanbieding</a>
+        <a class="nav-link col-1" href="#">Page 1</a>
+        <a class="nav-link col-1" href="#">Page 2</a>
+        <a class="nav-link col-1" href="#">Page 3</a>
+        <a class="nav-link col-1" href="#">Deals</a>
         <a class="nav-link col-4" href="#"><?php include "inc/search.php"?></a>
-        <a class="nav-link col-1" href="#">Winkelmand</a>
+        <a class="nav-link col-1" href="#">Shoppingcart</a>
     </nav>
 </header>
 <div class="container-fluid">
