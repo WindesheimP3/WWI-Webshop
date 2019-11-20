@@ -1,4 +1,9 @@
 <?php
+if (isset($_GET['result'])){
+    $resultsPerPage = $_GET['result'];
+} else {
+    $order = "ORDER BY StockItemName";
+}
 $resultsPerPage = 21;
 if (isset($_GET["page"])) {
     $page = $_GET["page"];

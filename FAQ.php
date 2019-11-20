@@ -10,7 +10,7 @@ include 'inc/header.php';
     ?>
     <div class="col-8">
         <!-- WEBPAGE CONTENT -->
-        <h1 class="text-left">Stel hier uw kekke vragen</h1>
+        <h1 class="text-left">Ask here your kekke questions</h1>
 
     </div>
 </div>

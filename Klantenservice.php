@@ -11,7 +11,7 @@ include 'inc/header.php';
     ?>
     <div class="col-8">
         <!-- WEBPAGE CONTENT -->
-        <h1 class="text-left">Hier is ons adres</h1>
+        <h1 class="text-left">Here is our address</h1>
     </div>
 </div>
 <!-- inladen footer -->

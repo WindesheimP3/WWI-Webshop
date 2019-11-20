@@ -13,7 +13,7 @@ include 'sql-statements/database-connectie.php';
     <!-- WEBPAGE CONTENT -->
     <div class="col-8">
         <div class="row">
-            <h1>&nbsp Zoekresultaten</h1>
+            <h1>&nbsp Search results</h1>
         </div>
         <div class="row">
             <div class="col-8"></div>
@@ -23,6 +23,7 @@ include 'sql-statements/database-connectie.php';
                 ?>
             <form style="text-align:center;" method="get" action="search-result.php">
                 <select name="order">
+                    <option selected disabled> -- select filter --</option>
                     <option value="StockItemName">Name</option>
                     <option value="UnitPrice ASC">Price low - high</option>
                     <option value="UnitPrice DESC">Price high - low</option>
@@ -46,7 +47,7 @@ include 'sql-statements/database-connectie.php';
 <div class=\"card-body\">
 <h5 class=\"card-title\">$SIname</h5>
 <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nunc urna, convallis a dictum quis. </p>
-<a href=\"productpagina1.php?StockItemID=$SIID\" class=\"btn btn-primary\">Bekijk product!</a>
+<a href=\"productpagina1.php?StockItemID=$SIID\" class=\"btn btn-primary\">Go to product!</a>
 </div> 
 </div>
 </div>
