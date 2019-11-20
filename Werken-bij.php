@@ -10,7 +10,7 @@ include 'inc/header.php';
     ?>
     <div class="col-8">
         <!-- WEBPAGE CONTENT -->
-        <h1 class="text-left">HAHA WIJ HEBBEN LEKKER GEEN WERK</h1>
+        <h1 class="text-left">HAHA WE HAVE TASTY NO WORK</h1>
 
     </div>
 </div>
