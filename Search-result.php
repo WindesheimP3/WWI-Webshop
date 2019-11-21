@@ -73,9 +73,12 @@ include 'inc/paging-zoek/paging-start.php';
             include "inc/paging-zoek/paging-navbar.php"
             ?>
         </div>
+        <br><br>
     </div>
 
 <?php
 include "sql-statements/database-Sluit.php";
+?>
+<?php
 include 'inc/footer.php';
 ?>

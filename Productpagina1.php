@@ -12,6 +12,11 @@ include 'inc/Header.php';
     ?>
     <!-- WEBPAGE CONTENT -->
     <link rel="stylesheet" type="text/css" href="Productpagina1.css">
+    <style>
+        #Sidebar {
+            height: 100vh;
+        }
+    </style>
     <div class="col">
         <?php
         // Selecteer het stockitemID van de catalog pagina

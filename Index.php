@@ -10,7 +10,7 @@ include 'inc/header.php';
     ?>
     <style>
         #Sidebar {
-            height: 100vh;
+            height: 85vh;
         }
     </style>
     <div class="col-8">
