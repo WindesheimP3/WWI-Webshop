@@ -36,7 +36,7 @@ include 'inc/Header.php';
                     <div class="slideshow">
                         <input type="radio" name="ss1" id="ss1-item-1" class="slideshow--bullet" checked="checked"/>
                         <div class="slideshow--item">
-                            <img src="img/img_lights.jpg"/>
+                            <a href="https://www.youtube.com/watch?v=V1NJPSZZBsk" target="_blank"><img src="img/img_lights.jpg" style="height: 400px; width: 600px;"/></a>
                             <label for="ss1-item-3" class="slideshow--nav slideshow--nav-previous">Go to slide
                                 3</label>
                             <label for="ss1-item-2" class="slideshow--nav slideshow--nav-next">Go to slide 2</label>
@@ -58,7 +58,7 @@ include 'inc/Header.php';
                         </div>
                     </div>
                 </div>
-                <div class="col-*-*" style="padding-left:20px; padding-top: 10px;">
+                <div class="col-*-*">
                     <p>Recommended price: €<?php print($RecommendedRetailPrice) ?></p>
                     <p>Our price: €<?php print($UnitPrice) ?></p>
                     <p>Quanity on hand: <?php print ($QuantityOnHand) ?></p>
