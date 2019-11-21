@@ -12,11 +12,6 @@ include 'inc/Header.php';
     ?>
     <!-- WEBPAGE CONTENT -->
     <link rel="stylesheet" type="text/css" href="Productpagina1.css">
-    <style>
-        #Sidebar {
-            height: 100vh;
-        }
-    </style>
     <div class="col">
         <?php
         // Selecteer het stockitemID van de catalog pagina
@@ -34,38 +29,53 @@ include 'inc/Header.php';
         ?>
         <div class="container">
             <div class="row" style="padding-top: 10px; padding-left: 10px;">
-                <h2><?php print($ItemName) ?></h2><br>
+                <div class="col">
+                    <h2><?php print($ItemName) ?></h2><br>
+                </div>
             </div>
-            <div class="row" style="padding: 10px;">
-                <div class="col-*-*" >
+            <div class="row">
+                <div class="col">
                     <div class="slideshow">
                         <input type="radio" name="ss1" id="ss1-item-1" class="slideshow--bullet" checked="checked"/>
                         <div class="slideshow--item">
-                            <a href="https://www.youtube.com/watch?v=V1NJPSZZBsk" target="_blank"><img src="img/img_lights.jpg" style="height: 400px; width: 600px;"/></a>
+                            <a href="https://www.youtube.com/watch?v=V1NJPSZZBsk" target="_blank"><img
+                                        src="img/img_lights.jpg" style="height: 400px; width: 600px;"/></a>
                             <label for="ss1-item-3" class="slideshow--nav slideshow--nav-previous">Go to slide
                                 3</label>
                             <label for="ss1-item-2" class="slideshow--nav slideshow--nav-next">Go to slide 2</label>
                         </div>
                         <input type="radio" name="ss1" id="ss1-item-2" class="slideshow--bullet"/>
                         <div class="slideshow--item">
-                            <img src="img/44554755-private-military-contractor-with-rpg-rocket-launcher-isolated-on-white.jpg" style="height: 400px; width: 600px;"/>
+                            <img src="img/44554755-private-military-contractor-with-rpg-rocket-launcher-isolated-on-white.jpg"
+                                 style="height: 400px; width: 600px;"/>
                             <label for="ss1-item-1" class="slideshow--nav slideshow--nav-previous">Go to slide
                                 1</label>
                             <label for="ss1-item-3" class="slideshow--nav slideshow--nav-next">Go to slide 3</label>
                         </div>
                         <input type="radio" name="ss1" id="ss1-item-3" class="slideshow--bullet"/>
                         <div class="slideshow--item">
-                            <img src="img/rpg-7-rocket-grenade-launcher-low-poly-game-asset-3d-model-low-poly-obj-mtl-fbx-blend-x3d.jpg" style="height: 400px; width: 600px;"/>
+                            <img src="img/rpg-7-rocket-grenade-launcher-low-poly-game-asset-3d-model-low-poly-obj-mtl-fbx-blend-x3d.jpg"
+                                 style="height: 400px; width: 600px;"/>
                             <label for="ss1-item-2" class="slideshow--nav slideshow--nav-previous">Go to slide
                                 2</label>
                             <label for="ss1-item-1" class="slideshow--nav slideshow--nav-next">Go to slide 1</label>
                         </div>
                     </div>
                 </div>
-                <div class="col-*-*">
-                    <p>Recommended price: €<?php print($RecommendedRetailPrice) ?></p>
-                    <p>Our price: €<?php print($UnitPrice) ?></p>
-                    <p>Quantity on hand: <?php print ($QuantityOnHand) ?></p>
+                <div class="col">
+                    <!-- <p>Recommended price: €<?php print($RecommendedRetailPrice) ?></p> -->
+                    <p>€<?php print("$UnitPrice") ?></p>
+                    <!-- <p>Quantity on hand: <?php print ($QuantityOnHand) ?></p> -->
+                    <p><?php
+                        if ($QuantityOnHand > 10) {
+                            print ("<font color=\"green\">In stock</font>");
+                        } elseif ($QuantityOnHand >= 1 && $QuantityOnHand <= 10) {
+                            print ("<font color=\"orange\">Only $QuantityOnHand left</font>");
+                        } elseif ($QuantityOnHand == 0) {
+                            print ("<font color=\"red\">Out of stock</font>");
+                        }
+                        ?>
+                    </p>
                     <p>Weight: <?php print($TypicalWeightPerUnit) . "kg" ?></p>
                     <p>
                         <?php if ($row["Size"] != null) {
@@ -74,11 +84,10 @@ include 'inc/Header.php';
                     </p>
                     <button type="button" class="btn btn-success">In basket</button>
                 </div>
-                    <div class="container" style="padding-top: 50px;">
-                        <div class="row">
+                <div class="container" style="padding-top: 50px;">
+                    <div class="row">
+                        <div class="col">
                             <h2>Productinformation</h2>
-                        </div>
-                        <div class="row">
                             <p><?php if ($row["MarketingComments"] != null) {
                                     print ("Nice to know: $MarketingComments<br>");
                                 } else {
@@ -87,6 +96,9 @@ include 'inc/Header.php';
                                 }
                                 ?>
                             </p>
+                        </div>
+                        <div class="col">
+                            <h2>Specs</h2>
                         </div>
                     </div>
                 </div>
