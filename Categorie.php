@@ -40,7 +40,7 @@ include 'sql-statements/Database-Connectie.php';
                         <option value="90">90 products</option>
                     </select>
                     <select name="order">
-                        <option selected disabled>-- select filter --</option>
+                        <option selected disabled>-- sort by --</option>
                         <option value="StockItemName">Name</option>
                         <option value="UnitPrice ASC">Price low - high</option>
                         <option value="UnitPrice DESC">Price high - low</option>
