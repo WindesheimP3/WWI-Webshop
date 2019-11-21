@@ -12,7 +12,7 @@ include 'sql-statements/Database-Connectie.php';
     // Sidebar
     include 'inc/sidebar.php'
     ?>
-    <div class="col-8">
+    <div class="col">
         <div class="row">
             <!-- WEBPAGE CONTENT -->
             <?php
@@ -57,27 +57,30 @@ include 'sql-statements/Database-Connectie.php';
                 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                     $ItemID = $row["StockItemID"];
                     $ItemName = $row["StockItemName"];
+                    $price = $row["UnitPrice"];
                     print(" 
 <div class='col-4'>    
 <div class=\"card\" style=\"width: 18rem;\" id='Productvak'>
 <div class=\"card-body\">
 <h5 class=\"card-title\">$ItemName</h5>
 <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nunc urna, convallis a dictum quis. </p>
-<a href=\"productpagina1.php?StockItemID=$ItemID\" class=\"btn btn-primary\">Go to product!</a>
+<p id='prijs' class='col text-center'>Now only €$price</p>
+<a href=\"productpagina1.php?StockItemID=$ItemID\" class=\"btn btn-primary col\">Go to product!</a>
 </div> 
 </div>
 </div>  
 ");
                 }
                 ?>
-                <div class="row">
-                    <h5>&nbsp &nbsp &nbsp</h5>
-                    <?php
-                    include "inc/paging-categorie/paging-navbar.php";
-                    include "sql-statements/database-Sluit.php";
-                    ?>
-                </div>
+
             </div>
+        </div>
+        <div class="row">
+            <h5>&nbsp &nbsp &nbsp</h5>
+            <?php
+            include "inc/paging-categorie/paging-navbar.php";
+            include "sql-statements/database-Sluit.php";
+            ?>
         </div>
     </div>
 </div>

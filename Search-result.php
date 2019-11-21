@@ -11,7 +11,7 @@ include 'inc/sidebar.php';
 include 'inc/paging-zoek/paging-start.php';
 ?>
     <!-- WEBPAGE CONTENT -->
-    <div class="col-8">
+    <div class="col">
         <div class="row">
             <h1>&nbsp Search results</h1>
         </div>
@@ -49,13 +49,15 @@ include 'inc/paging-zoek/paging-start.php';
                     while ($row = mysqli_fetch_array($result)) {
                         $SIname = $row['StockItemName'];
                         $SIID = $row['StockItemID'];
+                        $price = $row["UnitPrice"];
                         print (" 
 <div class='col-4'>    
 <div class=\"card\" style=\"width: 18rem;\">
 <div class=\"card-body\">
 <h5 class=\"card-title\">$SIname</h5>
 <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nunc urna, convallis a dictum quis. </p>
-<a href=\"productpagina1.php?StockItemID=$SIID\" class=\"btn btn-primary\">Go to product!</a>
+<p id='prijs' class='col text-center'>Now only €$price</p>
+<a href=\"productpagina1.php?StockItemID=$SIID\" class=\"btn btn-primary col\">Go to product!</a>
 </div> 
 </div>
 </div>
