@@ -48,7 +48,6 @@ include 'inc/Header.php';
                                 1</label>
                             <label for="ss1-item-3" class="slideshow--nav slideshow--nav-next">Go to slide 3</label>
                         </div>
-
                         <input type="radio" name="ss1" id="ss1-item-3" class="slideshow--bullet"/>
                         <div class="slideshow--item">
                             <img src="img/rpg-7-rocket-grenade-launcher-low-poly-game-asset-3d-model-low-poly-obj-mtl-fbx-blend-x3d.jpg" style="height: 400px; width: 600px;"/>
@@ -61,7 +60,7 @@ include 'inc/Header.php';
                 <div class="col-*-*">
                     <p>Recommended price: €<?php print($RecommendedRetailPrice) ?></p>
                     <p>Our price: €<?php print($UnitPrice) ?></p>
-                    <p>Quanity on hand: <?php print ($QuantityOnHand) ?></p>
+                    <p>Quantity on hand: <?php print ($QuantityOnHand) ?></p>
                     <p>Weight: <?php print($TypicalWeightPerUnit) . "kg" ?></p>
                     <p>
                         <?php if ($row["Size"] != null) {
