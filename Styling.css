@@ -1,16 +1,16 @@
 #achtergrond {
-    background-color: ivory;
+    background-color: aliceblue;
 }
 
 #Headerbalk {
-    background-color: darkblue;
+    background-color: cadetblue;
     border-bottom-style: solid;
     border-color: grey;
     font-style: italic;
 }
 
 #Footer {
-    background-color: darkblue;
+    background-color: cadetblue;
 }
 
 a {
@@ -18,12 +18,12 @@ a {
 }
 
 #Sidebar {
-    background-color: ivory;
+    background-color: lightgrey;
     position: relative;
     padding-left: 5px;
     padding-right: 40px;
-    border-right-style: inset;
-    border-color: lightgrey;
+    border-right-style: solid;
+    border-color: darkgrey;
     height: 100%; /* Full-height: remove this if you want "auto" height */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -42,6 +42,7 @@ a {
     border-radius: 10px;
     padding: 4px;
     text-align: center;
+    background-color: ivory;
 
 }
 
@@ -75,3 +76,12 @@ a {
     font-size: 22px;
     text-align: center;
 }
+
+#Productvak {
+    background-color: whitesmoke;
+    border-style: inset;
+    border-radius: 10px;
+    border-color: dimgrey;
+}
+
+
