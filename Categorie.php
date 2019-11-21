@@ -27,12 +27,18 @@ include 'sql-statements/Database-Connectie.php';
             ?>
         </div>
         <div class="row">
-            <div class="col-8"></div>
-            <div class="col-4">
+            <div class="col-6"></div>
+            <div class="col-6">
                 <?php
                 $StockGroupID = $_GET['StockGroupID'];
                 ?>
                 <form style="text-align:center;" method="get" action="categorie.php">
+                    <select name="resultsPerPage">
+                        <option selected disabled> -- select products per page --</option>
+                        <option value="30">30 products</option>
+                        <option value="60">60 products</option>
+                        <option value="90">90 products</option>
+                    </select>
                     <select name="order">
                         <option selected disabled>-- select filter --</option>
                         <option value="StockItemName">Name</option>
