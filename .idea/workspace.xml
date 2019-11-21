@@ -4,7 +4,7 @@
     <list default="true" id="ffdbab64-08e0-4339-a6fd-79d7ec608a93" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/Categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/paging-categorie/paging-start.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/paging-categorie/paging-start.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Search-result.php" beforeDir="false" afterPath="$PROJECT_DIR$/Search-result.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
