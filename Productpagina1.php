@@ -54,7 +54,7 @@ include 'inc/Header.php';
                             <img src="img/rpg-7-rocket-grenade-launcher-low-poly-game-asset-3d-model-low-poly-obj-mtl-fbx-blend-x3d.jpg" style="height: 400px; width: 600px;"/>
                             <label for="ss1-item-2" class="slideshow--nav slideshow--nav-previous">Go to slide
                                 2</label>
-                            <label for="ss1-item-4" class="slideshow--nav slideshow--nav-next">Go to slide 4</label>
+                            <label for="ss1-item-1" class="slideshow--nav slideshow--nav-next">Go to slide 1</label>
                         </div>
                     </div>
                 </div>
