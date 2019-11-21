@@ -8,11 +8,6 @@ include 'inc/header.php';
     // Sidebar
     include 'inc/sidebar.php'
     ?>
-    <style>
-        #Sidebar {
-            height: 85vh;
-        }
-    </style>
     <div class="col-8">
         <!-- WEBPAGE CONTENT -->
         <h1 class="text-left">Heading 1</h1>
