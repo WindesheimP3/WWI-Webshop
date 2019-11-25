@@ -1,10 +1,6 @@
 <?php
 session_start();
-<<<<<<< HEAD
 $title = "Shopping Cart";
-=======
-$title = "banaan";
->>>>>>> bfdf9eae06ec7618ba7076de20e1435abc4f80fc
 include 'inc/header.php';
 ?>
 <!-- Zorgt er voor dat de sidebar en webcontent in 1 rij staat -->
@@ -15,7 +11,6 @@ include 'inc/header.php';
     ?>
     <div class="col">
         <!-- WEBPAGE CONTENT -->
-<<<<<<< HEAD
         <div class="row">
             <div class="col"></div>
             <div class="col-10">
@@ -92,15 +87,3 @@ include 'inc/header.php';
         <?php
         include 'inc/footer.php';
         ?>
-=======
-        <h1 class="text-left">Heading 1</h1>
-        <p class="text-left">Some text.</p>
-        <h2 class="text-left">Heading 2</h2>
-        <p class="text-left">Some more text.</p>
-    </div>
-</div>
-
-<?php
-include 'inc/footer.php';
-?>
->>>>>>> bfdf9eae06ec7618ba7076de20e1435abc4f80fc
