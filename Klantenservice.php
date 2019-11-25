@@ -1,5 +1,6 @@
 <!-- inladen header -->
 <?php
+session_start();
 $title = "Klantenservice";
 include 'inc/header.php';
 ?>
