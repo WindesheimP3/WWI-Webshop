@@ -5,7 +5,7 @@ include 'inc/Header.php';
 ?>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="Productpagina-css/slideshow.css" type="text/css">
+    <link rel="stylesheet" href="Productpagina1.css" type="text/css">
 </head>
 <div class="row">
     <?php
