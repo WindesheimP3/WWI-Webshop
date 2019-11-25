@@ -10,10 +10,8 @@ include 'inc/header.php';
     ?>
     <div class="col-8">
         <!-- WEBPAGE CONTENT -->
-        <h1 class="text-left">Heading 1</h1>
-        <p class="text-left">Some text.</p>
-        <h2 class="text-left">Heading 2</h2>
-        <p class="text-left">Some more text.</p>
+        <h1 class="text-left">New Deals now available</h1>
+
     </div>
 </div>
 
