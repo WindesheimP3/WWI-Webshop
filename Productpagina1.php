@@ -4,8 +4,6 @@ include 'inc/Header.php';
 ?>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="Productpagina-css/reset.css" type="text/css">
-    <link rel="stylesheet" href="Productpagina-css/default.css" type="text/css">
     <link rel="stylesheet" href="Productpagina-css/slideshow.css" type="text/css">
 </head>
 <link rel="stylesheet" type="text/css" href="Productpagina1.css">
