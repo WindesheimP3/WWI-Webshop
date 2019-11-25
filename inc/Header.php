@@ -10,17 +10,21 @@
             print("WWI-Webshop | $title");
         } else {
             print("webshop");
-        } ?></title>
+        } ?>
+    </title>
 </head>
 <body id="Achtergrond">
 <header id="Headerbalk">
     <nav class="nav justify-content-center">
-        <a class="nav-brand col-3 align-center h1" href="index.php">WWI-Webshop</a>
+        <div class="col">
+            <a href="Index.php">
+                <img src="img\Logo.png"  alt="WideWorldImporters" id="Logo" >
+            </a>
+        </div>
         <a class="col-7"></a>
         <a class="nav-link col-1" href="#">Wishlist</a>
         <a class="nav-link col-1 small" href="#">My profile</a>
-        <a class="col-2"></a>
-        <a class="nav-link col-1" href="index.php">Home</a>
+        <a class="col-3"></a>
         <a class="nav-link col-1" href="#">Page 1</a>
         <a class="nav-link col-1" href="#">Page 2</a>
         <a class="nav-link col-1" href="#">Page 3</a>
@@ -30,3 +34,5 @@
     </nav>
 </header>
 <div class="container-fluid">
+</div>
+</body>
