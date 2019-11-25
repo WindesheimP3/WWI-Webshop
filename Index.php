@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "Home";
 include 'inc/header.php';
 ?>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "FAQ";
 include 'inc/header.php';
 ?>

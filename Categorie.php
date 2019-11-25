@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "Categorie";
 // bovenste bar van de pagina
 include 'inc/header.php';
