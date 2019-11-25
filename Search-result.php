@@ -16,7 +16,7 @@ include 'inc/paging-zoek/paging-start.php';
             <h1>&nbsp Search results</h1>
         </div>
         <div class="row">
-            <!-- Order by filtreren -->
+            <!-- Order by en Result per page filtreren -->
             <?php
             $name = $_GET['name'];
             ?>
@@ -46,11 +46,12 @@ include 'inc/paging-zoek/paging-start.php';
             if (isset($_GET['submit'])) { //kijken of het gesubmit kan worden
                 if (preg_match("/^([A-Za-z0-9]+)/", $_GET['name'])) {
                     include "sql-statements/search-result/SQL-search.php";
-                    while ($row = mysqli_fetch_array($result)) {
-                        $SIname = $row['StockItemName'];
-                        $SIID = $row['StockItemID'];
-                        $price = $row["UnitPrice"];
-                        print (" 
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_array($result)) {
+                            $SIname = $row['StockItemName'];
+                            $SIID = $row['StockItemID'];
+                            $price = $row["UnitPrice"];
+                            print (" 
 <div class='col-4'>    
 <div class=\"card\" style=\"width: 18rem;\">
 <div class=\"card-body\">
@@ -62,6 +63,10 @@ include 'inc/paging-zoek/paging-start.php';
 </div>
 </div>
 ");
+                        }
+                    } else {
+                        print ("<h3> &nbsp No Results found <br>
+                                    &nbsp Try searching a different term. </h3>");
                     }
                 }
             }
