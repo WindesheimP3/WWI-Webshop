@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "banaan";
 include 'inc/header.php';
 ?>

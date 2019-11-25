@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "Search Results";
 include 'inc/header.php';
 include 'sql-statements/database-connectie.php';
