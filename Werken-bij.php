@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "Werken bij";
 include 'inc/header.php';
 ?>

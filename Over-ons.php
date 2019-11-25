@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title="Over ons";
 include 'inc/header.php';
 ?>
