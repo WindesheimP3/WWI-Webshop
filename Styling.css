@@ -3,27 +3,31 @@
 }
 
 #Headerbalk {
-    background-color: cadetblue;
+    background-color: white;
     border-bottom-style: solid;
-    border-color: grey;
+    border-color: deepskyblue;
     font-style: italic;
+    height: 100px;
 }
 
 #Footer {
-    background-color: cadetblue;
+    background-color: whitesmoke;
+    border-top-style: solid;
+    border-color: deepskyblue;
+
 }
 
 a {
-    color: white;
+    color: darkslategrey;
 }
 
 #Sidebar {
-    background-color: lightgrey;
+    background-color: whitesmoke;
     position: relative;
     padding-left: 5px;
     padding-right: 40px;
     border-right-style: solid;
-    border-color: darkgrey;
+    border-color: deepskyblue;
     height: 100%; /* Full-height: remove this if you want "auto" height */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -36,7 +40,7 @@ a {
 
 #Sidebar1 {
     border-style: solid;
-    border-color: darkslategrey;
+    border-color: deepskyblue;
     margin-right: 0px;
     border-width: 2px;
     border-radius: 10px;
@@ -70,6 +74,7 @@ a {
     width: 255px;
     background-color: white;
     text-align: center;
+    border-color: deepskyblue;
 }
 
 #Categorie {
@@ -84,4 +89,13 @@ a {
     border-color: dimgrey;
 }
 
+
+#Logo {
+    position: absolute;
+    float: left;
+    height: 100px;
+    left: 0px;
+    border-bottom-style: solid;
+    border-color: deepskyblue;
+}
 
