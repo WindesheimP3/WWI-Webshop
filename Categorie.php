@@ -57,7 +57,7 @@ include 'sql-statements/Database-Connectie.php';
                 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                     $ItemID = $row["StockItemID"];
                     $ItemName = $row["StockItemName"];
-                    $price = $row["UnitPrice"];
+                    $price = $row["RecommendedRetailPrice"];
                     print(" 
 <div class='col-4'>    
 <div class=\"card\" style=\"width: 18rem;\" id='Productvak'>
