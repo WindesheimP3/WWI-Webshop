@@ -78,13 +78,10 @@ include 'inc/Header.php';
                 </div>
                 <br>
                 <hr>
-                <p>Weight: <?php print($TypicalWeightPerUnit) . "kg" ?><br>
+                <p>
                     <?php if ($row["Size"] != null) {
                         print ("Size: $ItemSize <br>");
                     } ?>
-                    <?php
-                    print $Tags;
-                    ?>
                 </p>
             </div>
         </div>
@@ -104,8 +101,23 @@ include 'inc/Header.php';
             </div>
             <div class="col">
                 <h2>Specs</h2>
+                <p>
+                    • Weight: <?php print($TypicalWeightPerUnit) . " kg<br>" ?>
+                    <?php
+                    if ($Tags != '[]') {
+                        $Tags = str_replace('"', '', $Tags);
+                        $Tags = str_replace('[', '', $Tags);
+                        $Tags = str_replace(']', '', $Tags);
+                        $Tags = str_replace(',', '<br> • ', $Tags);
+                        if ($row["Tags"] != '[""]') {
+                            print ('• ' . $Tags);
+                        }
+                    }
+                    ?>
+                </p>
             </div>
         </div>
+        <br>
     </div>
 </div>
 <?php
