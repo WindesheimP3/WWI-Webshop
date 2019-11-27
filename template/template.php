@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "banaan";
 include 'inc/header.php';
 ?>
@@ -8,7 +9,7 @@ include 'inc/header.php';
     // Sidebar
     include 'inc/sidebar.php'
     ?>
-    <div class="col-8">
+    <div class="col">
         <!-- WEBPAGE CONTENT -->
         <h1 class="text-left">Heading 1</h1>
         <p class="text-left">Some text.</p>

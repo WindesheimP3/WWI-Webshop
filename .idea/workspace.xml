@@ -27,11 +27,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1TVSPQwHIQXeqTsIQ6mtV3LBSIK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/inc/Header.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/func/Cart.php" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -58,6 +59,11 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="PhpLocalRunConfigurationType" factoryName="PHP Console" nameIsGenerated="true" path="$PROJECT_DIR$/func/Cart.php">
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -79,6 +85,9 @@
       <workItem from="1574327177317" duration="37000" />
       <workItem from="1574327731311" duration="1277000" />
       <workItem from="1574340256485" duration="237000" />
+      <workItem from="1574677900317" duration="36000" />
+      <workItem from="1574677989380" duration="4375000" />
+      <workItem from="1574859847562" duration="2700000" />
     </task>
     <servers />
   </component>

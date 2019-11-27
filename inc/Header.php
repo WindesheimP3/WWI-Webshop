@@ -30,7 +30,7 @@
         <a class="nav-link col-1" href="#">Page 3</a>
         <a class="nav-link col-1" href="#">Deals</a>
         <a class="nav-link col-4" href="#"><?php include "inc/search.php"?></a>
-        <a class="nav-link col-1" href="#">Shoppingcart</a>
+        <a class="nav-link col-1" href="shopping-cart.php">Shoppingcart</a>
     </nav>
 </header>
 <div class="container-fluid">

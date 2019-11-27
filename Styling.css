@@ -104,3 +104,11 @@ a {
     border-color: deepskyblue;
 }
 
+#border {
+    background-color: white;
+    border-style: solid;
+    border-color: deepskyblue;
+    border-radius: 10px;
+    padding: 4px;
+}
+
