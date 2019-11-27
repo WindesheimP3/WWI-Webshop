@@ -1,14 +1,12 @@
 <?php
+session_start();
 $title = "Product";
 include 'inc/Header.php';
 ?>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="Productpagina-css/reset.css" type="text/css">
-    <link rel="stylesheet" href="Productpagina-css/default.css" type="text/css">
-    <link rel="stylesheet" href="Productpagina-css/slideshow.css" type="text/css">
+    <link rel="stylesheet" href="Productpagina1.css" type="text/css">
 </head>
-<link rel="stylesheet" type="text/css" href="Productpagina1.css">
 <div class="row">
     <?php
     // Sidebar
@@ -31,9 +29,9 @@ include 'inc/Header.php';
     $Tags = $row["Tags"];
     $TypicalWeightPerUnit = round($TypicalWeightPerUnit, 2);
     ?>
-    <div class="col">
+    <div class="col" style="padding: 20px;">
         <div class="row">
-            <div class="col" style="padding-top: 20px;">
+            <div class="col">
                 <h2><?php print($ItemName) ?></h2><br>
             </div>
         </div>
@@ -80,13 +78,10 @@ include 'inc/Header.php';
                 </div>
                 <br>
                 <hr>
-                <p>Weight: <?php print($TypicalWeightPerUnit) . "kg" ?><br>
+                <p>
                     <?php if ($row["Size"] != null) {
                         print ("Size: $ItemSize <br>");
                     } ?>
-                    <?php
-                    print $Tags;
-                    ?>
                 </p>
             </div>
         </div>
@@ -106,8 +101,23 @@ include 'inc/Header.php';
             </div>
             <div class="col">
                 <h2>Specs</h2>
+                <p>
+                    • Weight: <?php print($TypicalWeightPerUnit) . " kg<br>" ?>
+                    <?php
+                    if ($Tags != '[]') {
+                        $Tags = str_replace('"', '', $Tags);
+                        $Tags = str_replace('[', '', $Tags);
+                        $Tags = str_replace(']', '', $Tags);
+                        $Tags = str_replace(',', '<br> • ', $Tags);
+                        if ($row["Tags"] != '[""]') {
+                            print ('• ' . $Tags);
+                        }
+                    }
+                    ?>
+                </p>
             </div>
         </div>
+        <br>
     </div>
 </div>
 <?php

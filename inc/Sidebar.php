@@ -3,7 +3,7 @@
 include "sql-statements/Database-Connectie.php";
 include "sql-statements/sidebar/SQL-category.php"
 ?>
-<nav class="sidebar col-1.9 sidebar">
+<nav class="sidebar col-2 sidebar">
     <div class="sidebar-sticky nav flex-column" id="Sidebar">
         <a class="nav-item h5"> Categories</a>
         <br>
