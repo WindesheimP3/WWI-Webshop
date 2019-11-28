@@ -12,7 +12,7 @@ include 'inc/paging-zoek/paging-start.php';
 
         // Check if the user is already logged in, if yes then redirect him to welcome page
         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-            header("location: profile.php");
+            header("location: profilepage.php");
             exit;
         }
 
@@ -69,7 +69,7 @@ include 'inc/paging-zoek/paging-start.php';
                                     $_SESSION["username"] = $username;
 
                                     // Redirect user to welcome page
-                                    header("location: index.php");
+                                    header("location: profilepage.php");
                                 } else{
                                     // Display an error message if password is not valid
                                     $password_err = "The password you entered was not valid.";
