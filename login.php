@@ -1,19 +1,18 @@
 <?php
 session_start();
 $title = "Search Results";
-include 'inc/header.php';
 include 'sql-statements/database-connectie.php';
 ?>
     <!-- Zorgt er voor dat de sidebar en webcontent in 1 rij staat -->
     <div class="row">
+
 <?php
 // Sidebar
-include 'inc/sidebar.php';
 include 'inc/paging-zoek/paging-start.php';
 
         // Check if the user is already logged in, if yes then redirect him to welcome page
         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-            header("location: index.php");
+            header("location: profile.php");
             exit;
         }
 
@@ -97,8 +96,6 @@ include 'inc/paging-zoek/paging-start.php';
 
         <head>
             <meta charset="UTF-8">
-            <title>Login</title>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
             <style type="text/css">
                 body{ font: 14px sans-serif; }
                 .wrapper{ width: 350px; padding: 20px; }

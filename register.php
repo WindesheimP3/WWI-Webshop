@@ -1,7 +1,11 @@
 <?php
-include 'inc/header.php';
 // Include config file
-include 'sql-statements/database-connectie.php';
+include "inc/Header.php";
+?>
+<div class="row">
+    <?php
+    include 'sql-statements/database-connectie.php';
+    include "inc/Sidebar.php";
 
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -79,7 +83,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                header("location: login.php");
+                header("location: Profile.php");
             } else{
                 echo "Something went wrong. Please try again later.";
             }
@@ -96,14 +100,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <br>
 <head>
     <meta charset="UTF-8">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
-<body>
+<div>
 <div class="wrapper">
     <h2>Sign Up</h2>
     <p>Please fill this form to create an account.</p>
@@ -127,7 +129,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <input type="submit" class="btn btn-primary" value="Submit">
             <input type="reset" class="btn btn-default" value="Reset">
         </div>
-        <p>Already have an account? <a href="login.php">Login here</a>.</p>
+        <p>Already have an account? <a href="Profile.php">Login here</a>.</p>
     </form>
 </div>
-</body>
+</div>
+    <?php
+    include "inc/Footer.php"
+    ?>
+</div>
