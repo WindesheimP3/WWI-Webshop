@@ -27,10 +27,10 @@ include 'inc/header.php';
                     include "sql-statements/shoppingcart/SQL-ShoppingCart.php";
                 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                     $StockItemName = $row["StockItemName"];
-                    $UnitPrice = $row["UnitPrice"];
+                    $UnitPrice = $row["RecommendedRetailPrice"];
 
                     print("<br><div class='row align-items-center'><div class='col'>$StockItemName </div><div class='col text-center'>Amount: $Quantity</div>
-<div class='col text-right'><font color=\"green\">€". number_format ($UnitPrice * $Quantity, 2, '.', ',')  ."</font></div></div><hr>");
+<div class='col text-right'><font color=\"green\">€". number_format ($UnitPrice * $Quantity * 1.21, 2, '.', ',')  ."</font></div></div><hr>");
 
                     $totalprices[]=  number_format ($UnitPrice * $Quantity, 2, '.', '');
                 }}
@@ -51,13 +51,12 @@ include 'inc/header.php';
                         <hr>
                         <h2><font color="green">Total: €<?php if($TotalPriceInc <50){print(number_format($TotalPriceInc + 3.95, 2));} else {print(number_format($TotalPriceInc, 2));} ?></font></h2>
                         <button type="button" class="btn btn-success btn-lg btn-block">Proceed to checkout</button>
-                            <a type="button" class="btn btn-danger btn-lg btn-block" href="SessionDestroy.php">Empty shopping cart</a>
+                            <a type="button" class="btn btn-danger btn-lg btn-block" href="ShoppingCartDestroy.php">Empty shopping cart</a>
                     </div>
 
                 </div>
             </div>
             <div class="col"></div>
-
         </div>
         <br>
         <?php
