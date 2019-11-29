@@ -13,6 +13,9 @@ include 'inc/paging-zoek/paging-start.php';
 ?>
     <!-- WEBPAGE CONTENT -->
     <div class="col">
+        <?php
+        include "inc/Regels.php";
+        ?>
         <div class="row">
             <h1>&nbsp Search results</h1>
         </div>

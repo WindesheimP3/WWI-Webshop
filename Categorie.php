@@ -11,9 +11,12 @@ include 'sql-statements/Database-Connectie.php';
 <div class="row">
     <?php
     // Sidebar
-    include 'inc/sidebar.php'
+    include 'inc/sidebar.php';
     ?>
-    <div class="col">
+    <div class="col-10">
+            <?php
+            include "inc/Regels.php";
+            ?>
         <div class="row">
             <!-- WEBPAGE CONTENT -->
             <?php
