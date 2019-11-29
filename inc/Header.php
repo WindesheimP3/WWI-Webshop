@@ -23,7 +23,7 @@
         </div>
         <a class="col-7"></a>
         <a class="nav-link col-1" href="#">Wishlist</a>
-        <a class="nav-link col-1 small" href="#">My profile</a>
+        <a class="nav-link col-1 small" href="Profile.php">My profile</a>
         <a class="col-3"></a>
         <a class="nav-link col-1" href="#">Page 1</a>
         <a class="nav-link col-1" href="#">Page 2</a>

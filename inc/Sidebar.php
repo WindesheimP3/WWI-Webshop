@@ -12,7 +12,7 @@ include "sql-statements/sidebar/SQL-category.php"
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             $StockGroupID = $row["StockGroupID"];
             $StockGroupName = $row["StockGroupName"];
-            print(" <a id='Sidebar1' class=\"nav-item\" href=\"categorie.php?StockGroupID={$StockGroupID}\">{$StockGroupName}</a><br>");
+            print(" <a id='Sidebar1' class=\"nav-item\" href=\"categorie.php?StockGroupID={$StockGroupID}\">{$StockGroupName}</a><br><br>");
         }
         ?>
     </div>
