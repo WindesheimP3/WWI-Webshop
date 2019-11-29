@@ -22,23 +22,28 @@ include 'inc/header.php';
             <div class="col"></div>
             <div class="col-6">
                 <?php
-                include 'sql-statements/database-connectie.php';
-                foreach ($_SESSION['cart'] as $StockItemID => $Quantity){
-                    include "sql-statements/shoppingcart/SQL-ShoppingCart.php";
-                while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                    $StockItemName = $row["StockItemName"];
-                    $UnitPrice = $row["RecommendedRetailPrice"];
+                if (isset($_SESSION['cart'])) {
+                    include 'sql-statements/database-connectie.php';
+                    foreach ($_SESSION['cart'] as $StockItemID => $Quantity) {
+                        include "sql-statements/shoppingcart/SQL-ShoppingCart.php";
+                        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                            $StockItemName = $row["StockItemName"];
+                            $UnitPrice = $row["RecommendedRetailPrice"];
+                            print("<br><div class='row align-items-center'><div class='col'>$StockItemName </div><div class='col text-center'>Amount: $Quantity</div>
+<div class='col text-right'><font color=\"green\">€" . number_format($UnitPrice * $Quantity * 1.21, 2, '.', ',') . "</font></div></div><hr>");
 
-                    print("<br><div class='row align-items-center'><div class='col'>$StockItemName </div><div class='col text-center'>Amount: $Quantity</div>
-<div class='col text-right'><font color=\"green\">€". number_format ($UnitPrice * $Quantity * 1.21, 2, '.', ',')  ."</font></div></div><hr>");
+                            $totalprices[] = number_format($UnitPrice * $Quantity, 2, '.', '');
+                        }
+                    }
 
-                    $totalprices[]=  number_format ($UnitPrice * $Quantity, 2, '.', '');
-                }}
-                $TotalPriceExl = number_format(array_sum($totalprices), 2, '.', '');
-                $TotalPriceInc = number_format($TotalPriceExl * 1.21,2,'.', '');
+                    $TotalPriceExl = number_format(array_sum($totalprices), 2, '.', '');
+                    $TotalPriceInc = number_format($TotalPriceExl * 1.21, 2, '.', '');
+                } else {
+                    print("<br><br><br><br><div class='row h3 text-left align-items-center'><font color='red'>No Items In Shopping Cart</font></div>");
+                    $TotalPriceInc = 0;
+                    $TotalPriceExl = 0;
+                }
                 ?>
-
-
             </div>
             <div class="col"></div>
             <div class="col"></div>
@@ -53,7 +58,6 @@ include 'inc/header.php';
                         <button type="button" class="btn btn-success btn-lg btn-block">Proceed to checkout</button>
                             <a type="button" class="btn btn-danger btn-lg btn-block" href="ShoppingCartDestroy.php">Empty shopping cart</a>
                     </div>
-
                 </div>
             </div>
             <div class="col"></div>
