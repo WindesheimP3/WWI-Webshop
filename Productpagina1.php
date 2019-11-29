@@ -2,6 +2,10 @@
 session_start();
 $title = "Product";
 include 'inc/Header.php';
+if(isset($_POST['addButton'])) {
+    include "func/cart.php";
+    AddToCart($_POST["StockItemID"], $_POST["Quantity"]);
+}
 ?>
 <head>
     <meta charset="utf-8">
@@ -20,6 +24,7 @@ include 'inc/Header.php';
     // Hier worden alle verschillende kolommen opgehaald uit de database en weergegeven op de webshop
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
     $ItemName = $row["StockItemName"];
+    $ItemID = $row["StockItemID"];
     $ItemSize = $row["Size"];
     $RecommendedRetailPrice = $row["RecommendedRetailPrice"];
     $UnitPrice = $row["UnitPrice"];
@@ -47,13 +52,15 @@ include 'inc/Header.php';
                     </div>
                     <input type="radio" name="ss1" id="ss1-item-2" class="slideshow--bullet"/>
                     <div class="slideshow--item">
-                        <img src="img/44554755-private-military-contractor-with-rpg-rocket-launcher-isolated-on-white.jpg" style="height: 400px; width: 630px;"/>
+                        <img src="img/44554755-private-military-contractor-with-rpg-rocket-launcher-isolated-on-white.jpg"
+                             style="height: 400px; width: 630px;"/>
                         <label for="ss1-item-1" class="slideshow--nav slideshow--nav-previous">Go to slide 1</label>
                         <label for="ss1-item-3" class="slideshow--nav slideshow--nav-next">Go to slide 3</label>
                     </div>
                     <input type="radio" name="ss1" id="ss1-item-3" class="slideshow--bullet"/>
                     <div class="slideshow--item">
-                        <img src="img/rpg-7-rocket-grenade-launcher-low-poly-game-asset-3d-model-low-poly-obj-mtl-fbx-blend-x3d.jpg" style="height: 400px; width: 630px;"/>
+                        <img src="img/rpg-7-rocket-grenade-launcher-low-poly-game-asset-3d-model-low-poly-obj-mtl-fbx-blend-x3d.jpg"
+                             style="height: 400px; width: 630px;"/>
                         <label for="ss1-item-2" class="slideshow--nav slideshow--nav-previous">Go to slide 2</label>
                         <label for="ss1-item-1" class="slideshow--nav slideshow--nav-next">Go to slide 1</label>
                     </div>
@@ -62,7 +69,15 @@ include 'inc/Header.php';
             <div class="col">
                 <br><br><br>
                 <hr>
-                <h2>€<?php print("$RecommendedRetailPrice") ?></h2>
+                <div class="row">
+                    <div class="col">
+                        <h2>€<?php print(number_format($RecommendedRetailPrice * 1.21, 2)) ?></h2>
+                    </div>
+                    <div class="col">
+                        <small>€<?php print("$RecommendedRetailPrice") ?>(exl)</small>
+                    </div>
+                    <div class="col"></div>
+                </div>
                 <p><?php
                     if ($QuantityOnHand > 10) {
                         print ("<font color=\"green\">In stock</font>");
@@ -73,9 +88,27 @@ include 'inc/Header.php';
                     }
                     ?>
                 </p>
-                <div class="btn-group cart">
-                    <button type="button" class="btn btn-success">Add to cart</button>
-                </div>
+                <form method="post" action="Productpagina1.php?StockItemID=<?php print($ItemID)?>">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <button type="submit" class="btn btn-success btn-lg btn-block" name="addButton" value="add">Add to cart</button>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="Quantity">Select Quantity</label>
+                                <select class="form-control" name="Quantity">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <input type="hidden" name="StockItemID" value="<?php print($ItemID); ?>">
+                        </div>
+                        <div class="col"> <?php if(isset($_POST['addButton'])){print("<font color=\"green\">Succesful added to cart</font>");} ?></div>
+                    </div>
+                </form>
                 <br>
                 <hr>
                 <p>
