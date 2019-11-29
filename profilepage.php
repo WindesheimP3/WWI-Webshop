@@ -17,7 +17,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit;
 }
 ?>
-
     <head>
         <meta charset="UTF-8">
         <title>Welcome</title>
@@ -37,13 +36,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         </div>
         <div class="col">
             <div class="row">
-                <a class="col">
+                <div class="col">
                     <h2>Order details</h2> <br>
                     <h4 class="text-left">Orders</h4>
                     <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nunc urna,
                         convallis a dictum quis. </p>
-                </a>
-                <a class="col">
+                </div>
+                <div class="col">
                     <div class="h2">Personal details</div>
                     <br>
                     <div class="h4 text-left">Name</div>
@@ -61,19 +60,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                         convallis a dictum quis.
                     </div>
                     <br>
-                    <div class="row">
-                        <a href="passwordreset.php" class="btn btn-warning">Reset Your Password</a>
-                        <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
-                        <br>
-                        <br>
-                    </div>
-                </a>
+                    <a href="passwordreset.php" class="btn btn-warning">Reset Your Password</a>
+                    <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+                </div>
             </div>
-
-
         </div>
     </body>
-
     <!-- footer -->
 <?php
 include "sql-statements/database-Sluit.php";
