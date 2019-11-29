@@ -9,9 +9,12 @@ include 'inc/header.php';
     // Sidebar
     include 'inc/sidebar.php'
     ?>
-    <div class="col">
+    <div class="col-10">
         <!-- WEBPAGE CONTENT -->
         <div class="row">
+            <?php
+            include "inc/Regels.php"
+            ?>
             <div class="col"></div>
             <div class="col-10">
                 <h1 class="text-left">Shopping Cart</h1>
