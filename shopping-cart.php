@@ -44,7 +44,7 @@ include 'inc/header.php';
             <div class="col"></div>
             <div class="col-3">
                 <div class="row sticky-top">
-                    <div class="col" id="border">
+                    <div class="col" id="totaalprijs">
                         Subtotal (exl): €<?php print(number_format($TotalPriceExl, 2)) ?> <br>
                         Subtotal (incl): €<?php print(number_format($TotalPriceInc, 2)) ?><br>
                         Shipping Cost: <?php if($TotalPriceInc <50){print("€3.95");} else {print("<font color=\"green\">Free</font>");} ?>
