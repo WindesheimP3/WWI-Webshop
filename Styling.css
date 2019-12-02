@@ -116,7 +116,7 @@ a {
 }
 
 .Lorum {
-    color: orange;
+    color: royalblue;
 }
 
 #Regels {
@@ -124,4 +124,12 @@ a {
     border-color: deepskyblue;
     border-width: 1px;
     padding-bottom: 2px;
+    font-style: italic;
+}
+
+#Productknop {
+    border-color: deepskyblue;
+    border-style: inset;
+    background-color: royalblue;
+    border-radius: 10px;
 }
