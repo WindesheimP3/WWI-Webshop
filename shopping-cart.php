@@ -12,9 +12,6 @@ include 'inc/header.php';
     <div class="col-10">
         <!-- WEBPAGE CONTENT -->
         <div class="row">
-            <?php
-            include "inc/Regels.php"
-            ?>
             <div class="col"></div>
             <div class="col-10">
                 <h1 class="text-left">Shopping Cart</h1>
@@ -25,6 +22,14 @@ include 'inc/header.php';
             <div class="col"></div>
             <div class="col-6">
                 <?php
+                $POST = array_flip($_POST);
+                if (isset($POST['Remove'])){
+                    $DeleteID = $POST['Remove'];
+                    unset($_SESSION['cart'][$DeleteID]);
+                    if (empty($_SESSION['cart'])){
+                        unset($_SESSION['cart']);
+                    }
+                }
                 if (isset($_SESSION['cart'])) {
                     include 'sql-statements/database-connectie.php';
                     foreach ($_SESSION['cart'] as $StockItemID => $Quantity) {
@@ -33,7 +38,7 @@ include 'inc/header.php';
                             $StockItemName = $row["StockItemName"];
                             $UnitPrice = $row["RecommendedRetailPrice"];
                             print("<br><div class='row align-items-center'><div class='col'>$StockItemName </div><div class='col text-center'>Amount: $Quantity</div>
-<div class='col text-right'><font color=\"green\">€" . number_format($UnitPrice * $Quantity * 1.21, 2, '.', ',') . "</font></div></div><hr>");
+<div class='col text-right'><font color=\"green\">€" . number_format($UnitPrice * $Quantity * 1.21, 2, '.', ',') . "</font></div><div class='çol'><form action='shopping-cart.php' method='post'><input class='btn btn-danger btn-small' type='submit' name='$StockItemID' value='Remove'></input></form></div></div><hr>");
 
                             $totalprices[] = number_format($UnitPrice * $Quantity, 2, '.', '');
                         }
@@ -57,7 +62,7 @@ include 'inc/header.php';
                         Subtotal (incl): €<?php print(number_format($TotalPriceInc, 2)) ?><br>
                         Shipping Cost: <?php if($TotalPriceInc <50){print("€3.95");} else {print("<font color=\"green\">Free</font>");} ?>
                         <hr>
-                        <h2><font color="green">Total: €<?php if($TotalPriceInc <50){print(number_format($TotalPriceInc + 3.95, 2));} else {print(number_format($TotalPriceInc, 2));} ?></font></h2>
+                        <h2><font color="green"><?php if ($TotalPriceInc != 0){ print("Total: €");}else{print("Donate: €");} if($TotalPriceInc <50){print(number_format($TotalPriceInc + 3.95, 2));} else {print(number_format($TotalPriceInc, 2));} ?></font></h2>
                         <button type="button" class="btn btn-success btn-lg btn-block">Proceed to checkout</button>
                             <a type="button" class="btn btn-danger btn-lg btn-block" href="ShoppingCartDestroy.php">Empty shopping cart</a>
                     </div>
