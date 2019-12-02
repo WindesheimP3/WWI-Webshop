@@ -60,6 +60,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                         convallis a dictum quis.
                     </div>
                     <br>
+                    <a class="h5 text left" class="nav-link" href="profiledata.php"> Change your personal details </a>
+                    <br>
+                    <br>
+                    <br>
                     <a href="passwordreset.php" class="btn btn-warning">Reset Your Password</a>
                     <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
                 </div>
