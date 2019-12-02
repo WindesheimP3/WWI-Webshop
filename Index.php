@@ -9,13 +9,15 @@ include 'inc/header.php';
     // Sidebar
     include 'inc/sidebar.php'
     ?>
-    <div class="col-8">
-        <!-- WEBPAGE CONTENT -->
-        <h1 class="text-left">New Deals now available</h1>
-
+    <div class="col-9">
+        <?php
+        include "inc/Regels.php";
+        ?>
+        <div>
+            <h1>Explore our deals!</h1>
+        </div>
     </div>
-</div>
 
-<?php
-include 'inc/footer.php';
-?>
+    <?php
+    include 'inc/footer.php';
+    ?>

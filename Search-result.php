@@ -13,6 +13,9 @@ include 'inc/paging-zoek/paging-start.php';
 ?>
     <!-- WEBPAGE CONTENT -->
     <div class="col">
+        <?php
+        include "inc/Regels.php";
+        ?>
         <div class="row">
             <h1>&nbsp Search results</h1>
         </div>
@@ -54,7 +57,7 @@ include 'inc/paging-zoek/paging-start.php';
                             $price = $row["UnitPrice"];
                             print (" 
 <div class='col-4'>    
-<div class=\"card\" style=\"width: 18rem;\">
+<div class=\"card\" style=\"width: 18rem;\" id='Productvak'>
 <div class=\"card-body\">
 <h5 class=\"card-title\">$SIname</h5>
 <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nunc urna, convallis a dictum quis. </p>
