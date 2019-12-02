@@ -62,7 +62,7 @@ include 'inc/paging-zoek/paging-start.php';
 <h5 class=\"card-title\">$SIname</h5>
 <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nunc urna, convallis a dictum quis. </p>
 <p id='prijs' class='col text-center'>Now only €".number_format($price * 1.21, 2)."</p>
-<a href=\"productpagina1.php?StockItemID=$SIID\" class=\"btn btn-primary col\">Go to product!</a>
+<a href=\"productpagina1.php?StockItemID=$SIID\" class=\"btn btn-primary col\" id='Productknop'>Go to product!</a>
 </div> 
 </div>
 </div>
