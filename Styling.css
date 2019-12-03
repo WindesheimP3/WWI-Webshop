@@ -150,3 +150,22 @@ a {
     height: 100%;
     width: 100%;
 }
+
+#Account {
+    height: 40px;
+    right: 15px;
+    position: absolute;
+}
+
+#Winkelmand {
+    height: 40px;
+}
+
+#Sorteer {
+    border-style: inset;
+    border-radius: 10px;
+    border-color: deepskyblue;
+    background-color: whitesmoke;
+    color: black;
+    border-width: 2px;
+}

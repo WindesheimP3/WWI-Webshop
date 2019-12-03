@@ -37,20 +37,20 @@ include 'sql-statements/Database-Connectie.php';
                 $StockGroupID = $_GET['StockGroupID'];
                 ?>
                 <form style="text-align:center;" method="get" action="categorie.php">
-                    <select name="resultsPerPage">
+                    <select name="resultsPerPage" id="Sorteer">
                         <option selected disabled> -- select products per page --</option>
                         <option value="30">30 products</option>
                         <option value="60">60 products</option>
                         <option value="90">90 products</option>
                     </select>
-                    <select name="order">
+                    <select name="order" id="Sorteer">
                         <option selected disabled>-- sort by --</option>
                         <option value="StockItemName">Name</option>
                         <option value="UnitPrice ASC">Price low - high</option>
                         <option value="UnitPrice DESC">Price high - low</option>
                     </select>
                     <input type="hidden" name="StockGroupID" value="<?php print($StockGroupID); ?>">
-                    <input type="submit" name="submit" value="Search"><br>
+                    <input type="submit" name="submit" value="Search" id="Sorteer"><br>
                 </form>
             </div>
         </div>
