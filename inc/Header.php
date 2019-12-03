@@ -23,14 +23,18 @@
         </div>
         <a class="col-7"></a>
         <a class="nav-link col-1" href="#">Wishlist</a>
-        <a class="nav-link col-1 small" href="Profile.php">My profile</a>
+        <a class="nav-link col-1 small" href="Profile.php">
+            <img  id="Account" src="img/Account.jpg">
+        </a>
         <a class="col-3"></a>
         <a class="nav-link col-1" href="#">Page 1</a>
         <a class="nav-link col-1" href="#">Page 2</a>
         <a class="nav-link col-1" href="#">Page 3</a>
         <a class="nav-link col-1" href="#">Deals</a>
-        <a class="nav-link col-4" href="#"><?php include "inc/search.php"?></a>
-        <a class="nav-link col-1" href="shopping-cart.php">Shoppingcart</a>
+        <a class="nav-link col-3" href="#"><?php include "inc/search.php"?></a>
+        <a class="nav-link col-1" href="shopping-cart.php">
+            <img id="Winkelmand" src="img/Winkelmand.png">
+        </a>
     </nav>
 </header>
 <div class="container-fluid">
