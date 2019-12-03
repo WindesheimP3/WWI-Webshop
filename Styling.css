@@ -133,3 +133,20 @@ a {
     background-color: royalblue;
     border-radius: 10px;
 }
+
+#Koopknop {
+    border-style: outset;
+    border-color: green;
+}
+
+#Slideshow {
+    border-color: deepskyblue;
+    border-style: outset;
+}
+
+#test {
+    background-color: grey;
+    border-style: dotted;
+    height: 100%;
+    width: 100%;
+}

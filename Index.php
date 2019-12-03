@@ -9,25 +9,27 @@ include 'inc/header.php';
     // Sidebar
     include 'inc/sidebar.php'
     ?>
-    <div class="col-10">
+    <div class="col-9">
         <?php
         include "inc/Regels.php";
         ?>
         <div>
             <h1>Explore our deals!</h1>
-            <div class="card-group">
-            <?php
-            include 'sql-statements/Database-Connectie.php';
+            <div class="col-4">
+                <div class="row"
+                <div class="card-group">
+                    <?php
+                    include 'sql-statements/Database-Connectie.php';
 
-            $sql = "SELECT * FROM stockitems ORDER BY RAND() LIMIT 2";
-            $result = mysqli_query($connect, $sql);
-            print ("<br> <br>");
-            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-            $ItemName = $row["StockItemName"];
-            $ItemID = $row["StockItemID"];
-            $price = $row["RecommendedRetailPrice"];
-            print(" 
-<div class='col-4'>    
+                    $sql = "SELECT * FROM stockitems ORDER BY RAND() LIMIT 2";
+                    $result = mysqli_query($connect, $sql);
+                    print ("<br> <br>");
+                    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                    $ItemName = $row["StockItemName"];
+                    $ItemID = $row["StockItemID"];
+                    $price = $row["RecommendedRetailPrice"];
+                    print(" 
+<div class='col-3'>    
 <div class=\"card\" style=\"width: 18rem;\" id='Productvak'>
 <div class=\"card-body\">
 <h5 class=\"card-title\">$ItemName</h5>
@@ -38,7 +40,8 @@ include 'inc/header.php';
 </div>
 </div>  
 ");
-            ?></div>
+                    ?></div>
+            </div>
         </div>
     <?php
     }
@@ -46,4 +49,4 @@ include 'inc/header.php';
     ?>
     </div>
 </div>
-</div>
+
