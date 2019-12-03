@@ -44,21 +44,21 @@ if(isset($_POST['addButton'])) {
             <div class="col">
                 <div class="slideshow">
                     <input type="radio" name="ss1" id="ss1-item-1" class="slideshow--bullet" checked="checked"/>
-                    <div class="slideshow--item">
+                    <div class="slideshow--item" id="Slideshow">
                         <a href="https://www.youtube.com/watch?v=V1NJPSZZBsk" target="_blank">
                             <img src="img/img_lights.jpg" style="height: 400px; width: 630px;"/></a>
                         <label for="ss1-item-3" class="slideshow--nav slideshow--nav-previous">Go to slide 3</label>
                         <label for="ss1-item-2" class="slideshow--nav slideshow--nav-next">Go to slide 2</label>
                     </div>
                     <input type="radio" name="ss1" id="ss1-item-2" class="slideshow--bullet"/>
-                    <div class="slideshow--item">
+                    <div class="slideshow--item" id="Slideshow">
                         <img src="img/44554755-private-military-contractor-with-rpg-rocket-launcher-isolated-on-white.jpg"
                              style="height: 400px; width: 630px;"/>
                         <label for="ss1-item-1" class="slideshow--nav slideshow--nav-previous">Go to slide 1</label>
                         <label for="ss1-item-3" class="slideshow--nav slideshow--nav-next">Go to slide 3</label>
                     </div>
                     <input type="radio" name="ss1" id="ss1-item-3" class="slideshow--bullet"/>
-                    <div class="slideshow--item">
+                    <div class="slideshow--item" id="Slideshow">
                         <img src="img/rpg-7-rocket-grenade-launcher-low-poly-game-asset-3d-model-low-poly-obj-mtl-fbx-blend-x3d.jpg"
                              style="height: 400px; width: 630px;"/>
                         <label for="ss1-item-2" class="slideshow--nav slideshow--nav-previous">Go to slide 2</label>
@@ -91,7 +91,7 @@ if(isset($_POST['addButton'])) {
                 <form method="post" action="Productpagina1.php?StockItemID=<?php print($ItemID)?>">
                     <div class="row align-items-center">
                         <div class="col">
-                            <button type="submit" class="btn btn-success btn-lg btn-block" name="addButton" value="add">Add to cart</button>
+                            <button type="submit" class="btn btn-success btn-lg btn-block" id="Koopknop" name="addButton" value="add">Add to cart</button>
                         </div>
                         <div class="col">
                             <div class="form-group">
