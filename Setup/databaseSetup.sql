@@ -1,3 +1,4 @@
+
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -20,6 +21,9 @@ house_number INT,
 PRIMARY KEY (owner_id),
 FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+
+
 
 DROP TABLE IF EXISTS StockItemImage;
 DROP TABLE IF EXISTS Image;
