@@ -60,7 +60,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                         convallis a dictum quis.
                     </div>
                     <br>
-                    <a class="h5 text left" class="nav-link" href="profiledata.php"> Change your personal details </a>
+                    <a class="h5 text left" class="nav-link" href="profiledata.php"> Change your personal details WIP </a>
                     <br>
                     <br>
                     <br>
