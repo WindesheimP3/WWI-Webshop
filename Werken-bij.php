@@ -9,9 +9,11 @@ include 'inc/header.php';
     // Sidebar
     include 'inc/sidebar.php'
     ?>
-    <div class="col-8">
+    <div class="col-10">
         <!-- WEBPAGE CONTENT -->
-        <h1 class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nunc urna, convallis a dictum quis. </h1>
+        <h1 class="text-center">Join us</h1>
+        <br><br><br>
+        <h3 class="text-center"> -- There are currently no job offers available --</h3>
 
     </div>
 </div>

@@ -10,9 +10,12 @@ include 'inc/header.php';
     <?php
     include 'inc/sidebar.php'
     ?>
-    <div class="col-8">
+    <div class="col-10">
         <!-- WEBPAGE CONTENT -->
-        <h1 class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nunc urna, convallis a dictum quis. </h1>
+        <h1 class="text-center">Customer Service </h1>
+        <br>
+        <h2 class="text-center"> You can reach out to us on these platforms:</h2>
+
     </div>
 </div>
 <!-- inladen footer -->
