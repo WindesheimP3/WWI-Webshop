@@ -15,26 +15,17 @@
 </head>
 <body id="Achtergrond">
 <header id="Headerbalk">
-    <nav class="nav justify-content-center">
-        <div class="col">
-            <a href="Index.php">
-                <img src="img\Logo.png"  alt="WideWorldImporters" id="Logo" >
+    <nav class="nav">
+            <a href="Index.php" class="nav-item col-8">
+                <img src="img\Logo.png" alt="WideWorldImporters" id="Logo">
             </a>
-        </div>
-        <a class="col-7"></a>
-        <a class="nav-link col-1" href="#">Wishlist</a>
-        <a class="nav-link col-1 small" href="Profile.php">
-            <img  id="Account" src="img/Account.jpg">
-        </a>
-        <a class="col-3"></a>
-        <a class="nav-link col-1" href="#">Page 1</a>
-        <a class="nav-link col-1" href="#">Page 2</a>
-        <a class="nav-link col-1" href="#">Page 3</a>
-        <a class="nav-link col-1" href="#">Deals</a>
-        <a class="nav-link col-3" href="#"><?php include "inc/search.php"?></a>
-        <a class="nav-link col-1" href="shopping-cart.php">
-            <img id="Winkelmand" src="img/Winkelmand.png">
-        </a>
+            <div class="nav-link col"><?php include "inc/search.php" ?></div>
+            <a class="nav-link col" href="shopping-cart.php">
+                <img id="Winkelmand" src="img/Winkelmand.png">
+            </a>
+            <a class="nav-link col" href="Profile.php">
+                <img id="Account" src="img/Account.jpg">
+            </a>
     </nav>
 </header>
 <div class="container-fluid">

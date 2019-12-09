@@ -9,7 +9,7 @@ include 'inc/header.php';
     // Sidebar
     include 'inc/sidebar.php'
     ?>
-    <div class="col-9">
+    <div class="col-10">
         <?php
         include "inc/Regels.php";
         ?>

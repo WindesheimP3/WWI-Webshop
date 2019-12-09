@@ -82,7 +82,7 @@ if(isset($_POST['addButton'])) {
                         <h2>€<?php print(number_format($RecommendedRetailPrice * 1.21, 2)) ?></h2>
                     </div>
                     <div class="col">
-                        <small>€<?php print("$RecommendedRetailPrice") ?>(exl)</small>
+                        <small>€<?php print("$RecommendedRetailPrice") ?>(excl)</small>
                     </div>
                     <div class="col"></div>
                 </div>

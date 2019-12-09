@@ -58,13 +58,12 @@ include 'inc/header.php';
             <div class="col-3">
                 <div class="row sticky-top">
                     <div class="col" id="totaalprijs">
-                        Subtotal (exl): €<?php print(number_format($TotalPriceExl, 2)) ?> <br>
+                        Subtotal (excl): €<?php print(number_format($TotalPriceExl, 2)) ?> <br>
                         Subtotal (incl): €<?php print(number_format($TotalPriceInc, 2)) ?><br>
-                        Shipping Cost: <?php if($TotalPriceInc <50){print("€3.95");} else {print("<font color=\"green\">Free</font>");} ?>
+                        Shipping Cost: <?php if($TotalPriceInc <50 and $TotalPriceInc != 0){print("€3.95");} else {print("<font color=\"green\">Free</font>");} ?>
                         <hr>
-                        <h2><font color="green"><?php if ($TotalPriceInc != 0){ print("Total: €");}else{print("Donate: €");} if($TotalPriceInc <50){print(number_format($TotalPriceInc + 3.95, 2));} else {print(number_format($TotalPriceInc, 2));} ?></font></h2>
-                        <button type="button" class="btn btn-success btn-lg btn-block">Proceed to checkout</button>
-                            <a type="button" class="btn btn-danger btn-lg btn-block" href="ShoppingCartDestroy.php">Empty shopping cart</a>
+                        <h2><font color="green"><?php if ($TotalPriceInc != 0){ print("Total: €");}else{print("Free: €");} if($TotalPriceInc <50 and $TotalPriceInc != 0){print(number_format($TotalPriceInc + 3.95, 2));} else {print(number_format($TotalPriceInc, 2));} ?></font></h2>
+                        <a class="btn btn-success btn-lg btn-block" href="Payment.php">Proceed to checkout</a>
                     </div>
                 </div>
             </div>
