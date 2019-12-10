@@ -30,10 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (mysqli_stmt_execute($stmt2)) {
                 // Redirect to login page
                 header("location: profilepage.php");
-                mysqli_stmt_close($stmt2);
             } else {
                 echo "1.";
             }
         }
+        mysqli_stmt_close($stmt2);
     }
+    mysqli_stmt_close($stmt1);
 }
