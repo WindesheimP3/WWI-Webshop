@@ -84,7 +84,7 @@ include "inc/Header.php";
                 // Attempt to execute the prepared statement
                 if (mysqli_stmt_execute($stmt)) {
                     // Redirect to login page
-                    header("location: Profile.php");
+                    header("location: register.php");
                 } else {
                     echo "Something went wrong. Please try again later.";
                 }
@@ -117,7 +117,7 @@ include "inc/Header.php";
             <div class="col-5"></div>
             <h2>Sign Up</h2>
             <p>Please fill this form to create an account.</p>
-            <form action="<?php print htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <form action="register.php" method="post">
                 <div class="form-group <?php print (!empty($username_err)) ? 'has-error' : ''; ?>">
                     <label>Username</label>
                     <input type="text" name="username" class="form-control" value="<?php print $username; ?>">
@@ -134,13 +134,11 @@ include "inc/Header.php";
                            value="<?php print $confirm_password; ?>">
                     <span class="help-block"><?php print $confirm_password_err; ?></span>
                 </div>
-            </form>
         </div>
     <div class="col"></div>
         <div class="wrapper">
             <h2>Personal Details</h2>
             <p>Please fill in your personal details to complete your registration</p>
-            <form action="register.php" method="post">
                 <div class="form-group <?php print (!empty($firstname_err)) ? 'has-error' : ''; ?>">
                     <label>First name</label>
                     <input type="text" name="firstname" class="form-control" value="<?php print $firstname; ?>">
