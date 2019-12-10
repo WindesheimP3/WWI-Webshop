@@ -22,7 +22,28 @@ PRIMARY KEY (owner_id),
 FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-
+DROP TABLE IF EXISTS weborder;
+CREATE TABLE weborder (
+    order_id INT NOT NULL,
+    user_id INT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    
+    PRIMARY KEY (order_id),
+	FOREIGN KEY (user_id) REFERENCES users(id)
+    );
+    
+    DROP TABLE IF EXISTS weborderline;
+    CREATE TABLE weborderline (
+    orderline_id INT NOT NULL AUTO_INCREMENT,
+    order_id INT NOT NULL,
+    stockitemid INT NOT NULL,
+    quantity INT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    
+    PRIMARY KEY (orderline_id),
+	FOREIGN KEY (order_id) REFERENCES weborder(order_id)
+    );
+    
 
 
 DROP TABLE IF EXISTS StockItemImage;

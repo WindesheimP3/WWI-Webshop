@@ -23,6 +23,13 @@ include 'inc/sidebar.php'
             <?php
             if (isset($_SESSION['cart'])) {
                 include 'sql-statements/database-connectie.php';
+                $sql = "INSERT INTO weborder (order_id, user_id) VALUES (?, ?)";
+                $statement = mysqli_prepare($connect, $sql);
+                mysqli_stmt_bind_param($statement, 'ii', $_GET['order_id'], $_SESSION['id']);
+                mysqli_stmt_execute($statement);
+                $result = mysqli_stmt_get_result($statement);
+
+
                 foreach ($_SESSION['cart'] as $StockItemID => $Quantity) {
                     include "sql-statements/shoppingcart/SQL-ShoppingCart.php";
                     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
@@ -33,10 +40,17 @@ include 'inc/sidebar.php'
 
                         $totalprices[] = number_format($UnitPrice * $Quantity, 2, '.', '');
                     }
+                    $sql = "INSERT INTO weborderline (order_id, stockitemid, quantity) VALUES (?, ?, ?)";
+                    $statement = mysqli_prepare($connect, $sql);
+                    mysqli_stmt_bind_param($statement, 'iii', $_GET['order_id'], $StockItemID, $Quantity);
+                    mysqli_stmt_execute($statement);
+                    $result = mysqli_stmt_get_result($statement);
                 }
 
                 $TotalPriceExl = number_format(array_sum($totalprices), 2, '.', '');
                 $TotalPriceInc = number_format($TotalPriceExl * 1.21, 2, '.', '');
+
+
             } else {
                 print("<br><br><br><br><div class='row h3 text-left align-items-center'><font color='red'>No Items</font></div>");
                 $TotalPriceInc = 0;
