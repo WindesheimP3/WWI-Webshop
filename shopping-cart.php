@@ -23,10 +23,10 @@ include 'inc/header.php';
             <div class="col-6">
                 <?php
                 $POST = array_flip($_POST);
-                if (isset($POST['Remove'])){
+                if (isset($POST['Remove'])) {
                     $DeleteID = $POST['Remove'];
                     unset($_SESSION['cart'][$DeleteID]);
-                    if (empty($_SESSION['cart'])){
+                    if (empty($_SESSION['cart'])) {
                         unset($_SESSION['cart']);
                     }
                 }
@@ -60,10 +60,23 @@ include 'inc/header.php';
                     <div class="col" id="totaalprijs">
                         Subtotal (excl): €<?php print(number_format($TotalPriceExl, 2)) ?> <br>
                         Subtotal (incl): €<?php print(number_format($TotalPriceInc, 2)) ?><br>
-                        Shipping Cost: <?php if($TotalPriceInc <50 and $TotalPriceInc != 0){print("€3.95");} else {print("<font color=\"green\">Free</font>");} ?>
+                        Shipping Cost: <?php if ($TotalPriceInc < 50 and $TotalPriceInc != 0) {
+                            print("€3.95");
+                        } else {
+                            print("<font color=\"green\">Free</font>");
+                        } ?>
                         <hr>
-                        <h2><font color="green"><?php if ($TotalPriceInc != 0){ print("Total: €");}else{print("Free: €");} if($TotalPriceInc <50 and $TotalPriceInc != 0){print(number_format($TotalPriceInc + 3.95, 2));} else {print(number_format($TotalPriceInc, 2));} ?></font></h2>
-                        <a class="btn btn-success btn-lg btn-block" href="Payment.php">Proceed to checkout</a>
+                        <h2><font color="green"><?php if ($TotalPriceInc != 0) {
+                                    print("Total: €");
+                                } else {
+                                    print("Free: €");
+                                }
+                                if ($TotalPriceInc < 50 and $TotalPriceInc != 0) {
+                                    print(number_format($TotalPriceInc + 3.95, 2));
+                                } else {
+                                    print(number_format($TotalPriceInc, 2));
+                                } ?></font></h2>
+                        <a  class="btn btn-success btn-lg btn-block" href="Checkout.php">Proceed to checkout</a>
                     </div>
                 </div>
             </div>

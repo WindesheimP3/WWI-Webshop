@@ -176,3 +176,8 @@ a {
     border-color: grey;
     padding-bottom: 5px;
 }
+
+#bladerfoto{
+    padding-top: 5px;
+    height: 250px;
+}
