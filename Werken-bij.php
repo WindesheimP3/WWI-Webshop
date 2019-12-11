@@ -12,7 +12,7 @@ include 'inc/header.php';
     <div class="col-10">
         <!-- WEBPAGE CONTENT -->
         <h1 class="text-center">Join us</h1>
-        <br><br><br>
+        <br>
         <h3 class="text-center"> -- There are currently no job offers available --</h3>
 
     </div>
