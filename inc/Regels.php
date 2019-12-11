@@ -1,7 +1,7 @@
 <div class="row" id="Regels">
     <div class="col text-center">
         <b>Ordered before</b>
-        <b class="Lorum">24:00</b>
+        <b class="Lorum">12:00</b>
         <b>pm,</b>
         <b class="Lorum">next workday</b>
         <b>delivered</b>
