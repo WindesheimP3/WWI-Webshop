@@ -29,7 +29,7 @@ include 'inc/header.php';
                         $price = $row["RecommendedRetailPrice"];
                         print(" 
                     <div class='col-3'>    
-                    <div class=\"card\" style=\"width: 18rem;\" id='Productvak'>
+                    <div class=\"card h-100 w-100\" style=\"width: 18rem;\" id='Productvak'>
                     <div class=\"card-body\">
                     <h5 class=\"card-title\">$ItemName</h5>
                     <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nunc urna, convallis a dictum quis. </p>

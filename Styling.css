@@ -90,6 +90,7 @@ a {
     border-radius: 10px;
     border-color: deepskyblue;
     margin-bottom: 20px;
+    padding-bottom: 5px !important;
 }
 
 #prijs{
@@ -180,4 +181,8 @@ a {
 #bladerfoto{
     padding-top: 5px;
     height: 250px;
+}
+
+.productcard {
+    padding-bottom: 15px !important;
 }

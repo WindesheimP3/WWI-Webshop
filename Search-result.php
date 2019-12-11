@@ -60,8 +60,8 @@ include 'inc/paging-zoek/paging-start.php';
                                 $path= $row2["ImgPath"];
                             }
                             print (" 
-<div class='col-4'>    
-<div class=\"card w-100\" id='Productvak'>
+<div class='col-4 productcard'>    
+<div class=\"card w-100 h-100\" id='Productvak'>
 <div class=\"card-body\">
 <h5 class=\"card-title\" id='Productnaam'>$SIname</h5>
 <img class=\"card\" id='Productvak' src='$path' height='350px' width='350px'>
