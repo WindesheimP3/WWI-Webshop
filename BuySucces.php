@@ -45,6 +45,12 @@ include 'inc/sidebar.php'
                     mysqli_stmt_bind_param($statement, 'iii', $_GET['order_id'], $StockItemID, $Quantity);
                     mysqli_stmt_execute($statement);
                     $result = mysqli_stmt_get_result($statement);
+
+                    $sql2 = "UPDATE stockitemholdings SET quantityonhand = quantityonhand - ? WHERE stockitemid = ?";
+                    $statement2 = mysqli_prepare($connect, $sql2);
+                    mysqli_stmt_bind_param($statement2, 'ii', $Quantity, $StockItemID);
+                    mysqli_stmt_execute($statement2);
+                    $result2 = mysqli_stmt_get_result($statement2);
                 }
 
                 $TotalPriceExl = number_format(array_sum($totalprices), 2, '.', '');
