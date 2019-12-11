@@ -135,30 +135,45 @@ include "inc/Header.php";
                     <span class="help-block"><?php print $confirm_password_err; ?></span>
                 </div>
         </div>
-    <div class="col"></div>
+        <div class="col"></div>
         <div class="wrapper">
             <h2>Personal Details</h2>
             <p>Please fill in your personal details to complete your registration</p>
-                <div class="form-group <?php print (!empty($firstname_err)) ? 'has-error' : ''; ?>">
-                    <label>First name</label>
-                    <input type="text" name="firstname" class="form-control" value="<?php print $firstname; ?>">
-                    <span class="help-block"><?php print $firstname_err; ?></span>
-                </div>
-                <div class="form-group <?php print (!empty($lastname_err)) ? 'has-error' : ''; ?>">
-                    <label>Last name</label>
-                    <input type="text" name="lastname" class="form-control" value="<?php print $lastname; ?>">
-                    <span class="help-block"><?php print $lastname_err; ?></span>
-                </div>
-                <div class="form-group <?php print (!empty($city_err)) ? 'has-error' : ''; ?>">
-                    <label>City</label>
-                    <input type="text" name="city" class="form-control" value="<?php print $city; ?>">
-                    <span class="help-block"><?php print $city_err; ?></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Submit">
-                    <input type="reset" class="btn btn-default" value="Reset">
-                </div>
-                <p>Already have an account? <a href="Profile.php">Login here</a>.</p>
+            <div class="form-group <?php print (!empty($firstname_err)) ? 'has-error' : ''; ?>">
+                <label>First name</label>
+                <input type="text" name="firstname" class="form-control" value="<?php print $firstname; ?>">
+                <span class="help-block"><?php print $firstname_err; ?></span>
+            </div>
+            <div class="form-group <?php print (!empty($lastname_err)) ? 'has-error' : ''; ?>">
+                <label>Last name</label>
+                <input type="text" name="lastname" class="form-control" value="<?php print $lastname; ?>">
+                <span class="help-block"><?php print $lastname_err; ?></span>
+            </div>
+            <div class="form-group <?php print (!empty($city_err)) ? 'has-error' : ''; ?>">
+                <label>City</label>
+                <input type="text" name="city" class="form-control" value="<?php print $city; ?>">
+                <span class="help-block"><?php print $city_err; ?></span>
+            </div>
+            <div class="form-group <?php print (!empty($zipcode_err)) ? 'has-error' : ''; ?>">
+                <label>Zip-code</label>
+                <input type="text" name="zipcode" class="form-control" value="<?php print $zipcode; ?>">
+                <span class="help-block"><?php print $zipcode_err; ?></span>
+            </div>
+            <div class="form-group <?php print (!empty($address_err)) ? 'has-error' : ''; ?>">
+                <label>Address</label>
+                <input type="text" name="address" class="form-control" value="<?php print $address; ?>">
+                <span class="help-block"><?php print $address_err; ?></span>
+            </div>
+            <div class="form-group <?php print (!empty($housenumber_err)) ? 'has-error' : ''; ?>">
+                <label>Housenumber</label>
+                <input type="number" name="housenumber" class="form-control" value="<?php print $housenumber; ?>">
+                <span class="help-block"><?php print $housenumber_err; ?></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Submit">
+                <input type="reset" class="btn btn-default" value="Reset">
+            </div>
+            <p>Already have an account? <a href="Profile.php">Login here</a>.</p>
             </form>
         </div>
     </div>
