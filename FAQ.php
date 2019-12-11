@@ -9,10 +9,10 @@ include 'inc/header.php';
     // Sidebar
     include 'inc/sidebar.php'
     ?>
-    <div class="col-8">
+    <div class="col-10">
         <!-- WEBPAGE CONTENT -->
-        <h1 class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nunc urna, convallis a dictum quis. </h1>
-
+        <h1 class="text-center">FAQ </h1>
+        <br> <h3 class="text-center"> -- There are currently no FAQ --</h3>
     </div>
 </div>
 
