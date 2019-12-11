@@ -67,12 +67,28 @@ include "inc/Checkout/Header.php";
                     </form>
                     <hr>
                     <?php
+                    include 'sql-statements/database-connectie.php';
+
+                    $sql1 = "SELECT * FROM account_owner WHERE user_id = ? ";
+                    $stmt1 = mysqli_prepare($connect, $sql1);
+                    mysqli_stmt_bind_param($stmt1, "i", $_SESSION["id"]);
+                    mysqli_stmt_execute($stmt1);
+                    $result1 = mysqli_stmt_get_result($stmt1);
+                    while ($row = mysqli_fetch_array($result1, MYSQLI_ASSOC)) {
+                        $firstname = $row["first_name"];
+                        $lastname = $row["last_name"];
+                        $street = $row["streetname"];
+                        $housenumber = $row["house_number"];
+                        $zipcode = $row["zip_code"];
+                        $city = $row["city"];
+                    }
+
                     if (isset($_SESSION['loggedin'])){
                         print("  <h3>Shipment Details</h3>
-                    Naam <br>
-                    Adres <br>
-                    Postcode <br>
-                    Land <br>");
+                    $firstname $lastname <br>
+                    $street $housenumber <br>
+                    $zipcode <br>
+                    $city <br>");
                     } else {
                         print ("<h3>Shipment Details</h3>
                     <font color=\"red\">You are not logged in.</font>");
