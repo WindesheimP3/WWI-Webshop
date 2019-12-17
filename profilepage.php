@@ -29,7 +29,6 @@ while ($row = mysqli_fetch_array($result1, MYSQLI_ASSOC)) {
     $housenumber = $row["house_number"];
     $zipcode = $row["zip_code"];
     $city = $row["city"];
-    $email = $row["email_address"];
 }
 
 
@@ -58,7 +57,7 @@ while ($row = mysqli_fetch_array($result1, MYSQLI_ASSOC)) {
                     <h4 class="text-left">Orders</h4>
                     <div class="row">
                         <?php
-                        $sql2 = "SELECT * FROM weborder WHERE user_id = ? ORDER BY created_at DESC LIMIT 10";
+                        $sql2 = "SELECT * FROM weborder WHERE user_id = ?";
                         $stmt2 = mysqli_prepare($connect, $sql2);
                         mysqli_stmt_bind_param($stmt2, "i", $_SESSION["id"]);
                         mysqli_stmt_execute($stmt2);
@@ -93,14 +92,15 @@ while ($row = mysqli_fetch_array($result1, MYSQLI_ASSOC)) {
                 </div>
                 <br>
                 <div class="h4 text-left">Address</div>
-                <div class="h6 text-left"> <?php print ("$street $housenumber <br> $zipcode $city"); ?>
+                <div class="h6 text-left"> <?php print ($street . " " . $housenumber . ", " . $zipcode); ?>
                 </div>
                 <br>
-                <div class="h4 text-left">E-mail address</div>
-                <div class="h6 text-left"> <?php print $email; ?>
+                <div class="h4 text-left">City</div>
+                <div class="h6 text-left"> <?php print $city; ?>
                 </div>
                 <br>
-                <a class="h5 text left" class="nav-link" href="profiledata.php"> Change your personal details</a>
+                <a class="h5 text left" class="nav-link" href="profiledata.php"> Change your personal details
+                    WIP </a>
                 <br>
                 <br>
                 <br>
