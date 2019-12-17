@@ -172,7 +172,7 @@ include "inc/Header.php";
         <div class="col-5"></div>
         <div class="wrapper">
             <h2>Sign Up</h2>
-            <p>Please fill this form to create an account.</p>
+            <p>Please fill in this form to create an account.</p>
             <form action="register.php" method="post">
                 <div class="form-group <?php print (!empty($username_err)) ? 'has-error' : ''; ?>">
                     <label>Username</label>
@@ -191,8 +191,6 @@ include "inc/Header.php";
                     <span class="help-block"><?php print $confirm_password_err; ?></span>
                 </div>
                 <div class="col"></div>
-                <h2>Personal Details</h2>
-                <p>Please fill in your personal details to complete your registration</p>
                 <div class="form-group <?php print (!empty($firstname_err)) ? 'has-error' : ''; ?>">
                     <label>First name</label>
                     <input type="text" name="firstname" class="form-control" value="<?php print $firstname; ?>">

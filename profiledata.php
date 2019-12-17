@@ -13,8 +13,8 @@ include 'sql-statements/database-connectie.php';
             exit;
         }
         // Define variables and initialize with empty values
-        $firstname = "";
-        $firstname_err = "";
+        $firstname = $lastname = $city = $zipcode = $address = $housenumber = $email = "";
+        $firstname_err = $lastname_err = $city_err = $zipcode_err = $address_err = $housenumber_err = $email_err = "";
 
         // Processing form data when form is submitted
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -23,6 +23,20 @@ include 'sql-statements/database-connectie.php';
 
             if (empty(trim($_POST["firstname"]))) {
                 $firstname_err = "Please enter your first name.";
+            } else if (empty(trim($_POST["lastname"]))) {
+                $lastname_err = "Please enter your last name.";
+            } else if (empty(trim($_POST["city"]))) {
+                $city_err = "Please enter your city.";
+            } else if (empty(trim($_POST["zipcode"]))) {
+                $zipcode_err = "Please enter your zip-code.";
+            } else if (empty(trim($_POST["address"]))) {
+                $address_err = "Please enter your address.";
+            } else if (empty(trim($_POST["housenumber"]))) {
+                $housenumber_err = "Please enter your housenumber.";
+            } else if ($_POST["housenumber"] <= 0) {
+                $housenumber_err = "Please enter a valid housenumber.";
+            } else if (empty(trim($_POST["emailaddress"]))){
+                $email_err = "Please enter your email-address.";
             } else {
                 // Prepare a select statement
                 $sql1 = "SELECT user_id FROM account_owner WHERE user_id = ? ";
@@ -32,10 +46,16 @@ include 'sql-statements/database-connectie.php';
                 $result1 = mysqli_stmt_get_result($stmt1);
 
                 if (mysqli_num_rows($result1) == 0) {
-                    $sql2 = "INSERT INTO account_owner (user_id, first_name) VALUES (?, ?)";
+                    $sql2 = "INSERT INTO account_owner (user_id, first_name, last_name, city, zip_code, streetname, house_number, email_address) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                     $stmt2 = mysqli_prepare($connect, $sql2);
                     $param_firstname = trim($_POST["firstname"]);
-                    mysqli_stmt_bind_param($stmt2, "is", $_SESSION['id'], $param_firstname);
+                    $param_lastname = trim($_POST["lastname"]);
+                    $param_city = trim($_POST["city"]);
+                    $param_zipcode = trim($_POST["zipcode"]);
+                    $param_address = trim($_POST["address"]);
+                    $param_housenumber = trim($_POST["housenumber"]);
+                    $param_email = trim($_POST["emailaddress"]);
+                    mysqli_stmt_bind_param($stmt2, "isssssss", $_SESSION['id'], $param_firstname, $param_lastname, $param_city, $param_zipcode, $param_address, $param_housenumber, $param_email);
 
                     if (mysqli_stmt_execute($stmt2)) {
                         // Redirect to login page
@@ -46,10 +66,16 @@ include 'sql-statements/database-connectie.php';
                     }
 
                 } else {
-                    $sql3 = "Update account_owner SET first_name = ? where user_id = ?";
+                    $sql3 = "Update account_owner SET first_name = ?, last_name = ?, city = ?, zip_code = ?, streetname = ?, house_number = ?, email_address = ? where user_id = ?";
                     $stmt3 = mysqli_prepare($connect, $sql3);
                     $param_firstname = trim($_POST["firstname"]);
-                    mysqli_stmt_bind_param($stmt3, "si", $param_firstname, $_SESSION['id']);
+                    $param_lastname = trim($_POST["lastname"]);
+                    $param_city = trim($_POST["city"]);
+                    $param_zipcode = trim($_POST["zipcode"]);
+                    $param_address = trim($_POST["address"]);
+                    $param_housenumber = trim($_POST["housenumber"]);
+                    $param_email = trim($_POST["emailaddress"]);
+                    mysqli_stmt_bind_param($stmt3, "sssssssi", $param_firstname, $param_lastname, $param_city, $param_zipcode, $param_address, $param_housenumber, $param_email, $_SESSION['id']);
 
                     if (mysqli_stmt_execute($stmt3)) {
                         // Redirect to login page
@@ -90,6 +116,36 @@ include 'sql-statements/database-connectie.php';
                         <label>First name</label>
                         <input type="text" name="firstname" class="form-control" value="<?php print $firstname; ?>">
                         <span class="help-block"><?php print $firstname_err; ?></span>
+                    </div>
+                    <div class="form-group <?php print (!empty($lastname_err)) ? 'has-error' : ''; ?>">
+                        <label>Last name</label>
+                        <input type="text" name="lastname" class="form-control" value="<?php print $lastname; ?>">
+                        <span class="help-block"><?php print $lastname_err; ?></span>
+                    </div>
+                    <div class="form-group <?php print (!empty($city_err)) ? 'has-error' : ''; ?>">
+                        <label>City</label>
+                        <input type="text" name="city" class="form-control" value="<?php print $city; ?>">
+                        <span class="help-block"><?php print $city_err; ?></span>
+                    </div>
+                    <div class="form-group <?php print (!empty($zipcode_err)) ? 'has-error' : ''; ?>">
+                        <label>Zip-code</label>
+                        <input type="text" name="zipcode" class="form-control" value="<?php print $zipcode; ?>">
+                        <span class="help-block"><?php print $zipcode_err; ?></span>
+                    </div>
+                    <div class="form-group <?php print (!empty($address_err)) ? 'has-error' : ''; ?>">
+                        <label>Address</label>
+                        <input type="text" name="address" class="form-control" value="<?php print $address; ?>">
+                        <span class="help-block"><?php print $address_err; ?></span>
+                    </div>
+                    <div class="form-group <?php print (!empty($housenumber_err)) ? 'has-error' : ''; ?>">
+                        <label>Housenumber</label>
+                        <input type="number" name="housenumber" class="form-control" value="<?php print $housenumber; ?>">
+                        <span class="help-block"><?php print $housenumber_err; ?></span>
+                    </div>
+                    <div class="form-group <?php print (!empty($email_err)) ? 'has-error' : ''; ?>">
+                        <label>E-mail address</label>
+                        <input type="text" name="emailaddress" class="form-control" value="<?php print $email; ?>">
+                        <span class="help-block"><?php print $email_err; ?></span>
                     </div>
                     <div class="form-group">
                         <input type="submit" name="submit" value="Submit">
