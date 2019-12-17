@@ -10,8 +10,8 @@ include "inc/Header.php";
     // Define variables and initialize with empty values
     $username = $password = $confirm_password = "";
     $username_err = $password_err = $confirm_password_err = "";
-    $firstname = $lastname = $city = $zipcode = $address = $housenumber = "";
-    $firstname_err = $lastname_err = $city_err = $zipcode_err = $address_err = $housenumber_err = "";
+    $firstname = $lastname = $city = $zipcode = $address = $housenumber = $email = "";
+    $firstname_err = $lastname_err = $city_err = $zipcode_err = $address_err = $housenumber_err = $email_err = "";
 
 
     // Processing form data when form is submitted
@@ -117,7 +117,9 @@ include "inc/Header.php";
             $housenumber_err = "Please enter your housenumber.";
         } else if ($_POST["housenumber"] <= 0) {
             $housenumber_err = "Please enter a valid housenumber.";
-        } else {
+        } else if (empty(trim($_POST["emailaddress"]))){
+            $email_err = "Please enter your email-address.";
+            } else {
             // Prepare a select statement
             $sql1 = "SELECT user_id FROM account_owner WHERE user_id = ? ";
             $stmt1 = mysqli_prepare($connect, $sql1);
@@ -126,7 +128,7 @@ include "inc/Header.php";
             $result1 = mysqli_stmt_get_result($stmt1);
 
             if (mysqli_num_rows($result1) == 0) {
-                $sql2 = "INSERT INTO account_owner (user_id, first_name, last_name, city, zip_code, streetname, house_number) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                $sql2 = "INSERT INTO account_owner (user_id, first_name, last_name, city, zip_code, streetname, house_number, email_address) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmt2 = mysqli_prepare($connect, $sql2);
                 $param_firstname = trim($_POST["firstname"]);
                 $param_lastname = trim($_POST["lastname"]);
@@ -134,7 +136,8 @@ include "inc/Header.php";
                 $param_zipcode = trim($_POST["zipcode"]);
                 $param_address = trim($_POST["address"]);
                 $param_housenumber = trim($_POST["housenumber"]);
-                mysqli_stmt_bind_param($stmt2, "issssss", $id, $param_firstname, $param_lastname, $param_city, $param_zipcode, $param_address, $param_housenumber);
+                $param_email = trim($_POST["emailaddress"]);
+                mysqli_stmt_bind_param($stmt2, "isssssss", $id, $param_firstname, $param_lastname, $param_city, $param_zipcode, $param_address, $param_housenumber, $param_email);
 
                 if (mysqli_stmt_execute($stmt2)){
                     header("Location: profilepage.php");
@@ -220,6 +223,11 @@ include "inc/Header.php";
                     <input type="number" name="housenumber" class="form-control" value="<?php print $housenumber; ?>">
                     <span class="help-block"><?php print $housenumber_err; ?></span>
                 </div>
+                <div class="form-group <?php print (!empty($email_err)) ? 'has-error' : ''; ?>">
+                    <label>E-mail address</label>
+                    <input type="text" name="email" class="form-control" value="<?php print $email; ?>">
+                    <span class="help-block"><?php print $email_err; ?></span>
+                </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Submit">
                     <input type="reset" class="btn btn-default" value="Reset">
@@ -227,6 +235,9 @@ include "inc/Header.php";
                 <p>Already have an account? <a href="Profile.php">Login here</a>.</p>
             </form>
         </div>
+        <br>
+        <br>
+
     </div>
 
 
