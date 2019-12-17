@@ -114,7 +114,7 @@ if(isset($_POST['addButton'])) {
                             </div>
                             <input type="hidden" name="StockItemID" value="<?php print($ItemID); ?>">
                         </div>
-                        <div class="col"> <?php if(isset($_POST['addButton'])){print("<font color=\"green\">Succesful added to cart</font>");} ?></div>
+                        <div class="col"> <?php if(isset($_POST['addButton'])){print("<font color=\"green\">Succesfully added to cart</font>");} ?></div>
                     </div>
                 </form>
                 <br>

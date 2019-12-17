@@ -20,21 +20,25 @@ include 'inc/header.php';
                     <?php
                     include 'sql-statements/Database-Connectie.php';
 
-                    $sql = "SELECT * FROM stockitems ORDER BY RAND() LIMIT 4";
+                    $sql = "SELECT * FROM stockitems ORDER BY RAND() LIMIT 3";
                     $result = mysqli_query($connect, $sql);
                     print ("<br> <br>");
                     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                         $ItemName = $row["StockItemName"];
-                        $ItemID = $row["StockItemID"];
+                        $StockItemID = $row["StockItemID"];
                         $price = $row["RecommendedRetailPrice"];
+                        include "sql-statements/search-result/SQL-ProductFoto.php";
+                        while ($row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC)){
+                            $path= $row2["ImgPath"];
+                        }
                         print(" 
-                    <div class='col-3'>    
+                    <div class='col-4'>    
                     <div class=\"card h-100 w-100\" style=\"width: 18rem;\" id='Productvak'>
                     <div class=\"card-body\">
                     <h5 class=\"card-title\">$ItemName</h5>
-                    <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nunc urna, convallis a dictum quis. </p>
+                    <img class=\"card\" id='Productvak' src='$path' height='350px' width='350px'>
                     <p id='prijs' class='col text-center'>Now only €" . number_format($price * 1.21, 2) . "</p>
-                    <a href=\"productpagina1.php?StockItemID=$ItemID\" class=\"btn btn-primary col\" id='Productknop'>Go to product!</a>
+                    <a href=\"productpagina1.php?StockItemID=$StockItemID\" class=\"btn btn-primary col\" id='Productknop'>Go to product!</a>
                     </div> 
                     </div>
                     </div>  

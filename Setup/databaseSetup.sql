@@ -1,5 +1,10 @@
-
+DROP TABLE IF EXISTS weborderline;
+DROP TABLE IF EXISTS weborder;
+DROP TABLE IF EXISTS StockItemImage;
+DROP TABLE IF EXISTS Image;
+DROP TABLE IF EXISTS account_owner;
 DROP TABLE IF EXISTS users;
+
 CREATE TABLE users (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -7,7 +12,7 @@ CREATE TABLE users (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-DROP TABLE IF EXISTS account_owner;
+
 CREATE TABLE account_owner (
 owner_id INT NOT NULL AUTO_INCREMENT,
 user_id INT NOT NULL,
@@ -23,7 +28,7 @@ PRIMARY KEY (owner_id),
 FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-DROP TABLE IF EXISTS weborder;
+
 CREATE TABLE weborder (
     order_id INT NOT NULL,
     user_id INT NOT NULL,
@@ -33,7 +38,7 @@ CREATE TABLE weborder (
 	FOREIGN KEY (user_id) REFERENCES users(id)
     );
     
-    DROP TABLE IF EXISTS weborderline;
+
     CREATE TABLE weborderline (
     orderline_id INT NOT NULL AUTO_INCREMENT,
     order_id INT NOT NULL,
@@ -47,8 +52,6 @@ CREATE TABLE weborder (
     
 
 
-DROP TABLE IF EXISTS StockItemImage;
-DROP TABLE IF EXISTS Image;
 
 CREATE TABLE Image(
 PhotoID INT AUTO_INCREMENT PRIMARY KEY,

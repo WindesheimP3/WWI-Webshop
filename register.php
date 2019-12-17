@@ -225,7 +225,7 @@ include "inc/Header.php";
                 </div>
                 <div class="form-group <?php print (!empty($email_err)) ? 'has-error' : ''; ?>">
                     <label>E-mail address</label>
-                    <input type="text" name="email" class="form-control" value="<?php print $email; ?>">
+                    <input type="text" name="emailaddress" class="form-control" value="<?php print $email; ?>">
                     <span class="help-block"><?php print $email_err; ?></span>
                 </div>
                 <div class="form-group">
