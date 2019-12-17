@@ -17,6 +17,7 @@ city VARCHAR(45),
 zip_code VARCHAR(45),
 streetname VARCHAR(45),
 house_number INT,
+email_address VARCHAR(70),
 
 PRIMARY KEY (owner_id),
 FOREIGN KEY (user_id) REFERENCES users(id)
