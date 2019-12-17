@@ -1,0 +1,9 @@
+<?php
+$sql3 = ("SELECT *
+FROM stockitems JOIN stockitemholdings on stockitems.stockitemid = stockitemholdings.stockitemid
+WHERE stockitems.StockItemID = ?");
+$statement3 = mysqli_prepare($connect, $sql3);
+mysqli_stmt_bind_param($statement3, 'i', $StockItemID);
+mysqli_stmt_execute($statement3);
+$result3 = mysqli_stmt_get_result($statement3);
+?>
