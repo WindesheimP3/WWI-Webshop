@@ -191,8 +191,6 @@ include "inc/Header.php";
                     <span class="help-block"><?php print $confirm_password_err; ?></span>
                 </div>
                 <div class="col"></div>
-                <h2>Personal Details</h2>
-                <p>Please fill in your personal details to complete your registration</p>
                 <div class="form-group <?php print (!empty($firstname_err)) ? 'has-error' : ''; ?>">
                     <label>First name</label>
                     <input type="text" name="firstname" class="form-control" value="<?php print $firstname; ?>">

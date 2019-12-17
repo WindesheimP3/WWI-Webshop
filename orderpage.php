@@ -28,8 +28,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         <div class="row">
             <div class="col-8">
                 <div class='row'>
-                    <div class='col-5'> Item name </div> <div class='col-1'> Quantity</div>
-                    <div class='col-2'> Price </div> <div class='col-4'> Bought </div></div>
+                    <div class='col-5 h5'>Item name </div> <div class='col-1 h5'> Quantity</div>
+                    <div class='text-center col-2 h5'> Price </div> <div class='col-4 h5'> Bought </div></div>
                 <p> <?php $sql1 = "SELECT weborder.order_id, weborder.created_at, weborderline.stockitemid, weborderline.quantity FROM weborder JOIN weborderline ON weborder.order_id = weborderline.order_id WHERE weborder.order_id = ?";
                     $stmt1 = mysqli_prepare($connect, $sql1);
                     mysqli_stmt_bind_param($stmt1, "i", $_GET["order"]);
@@ -48,12 +48,15 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                         while ($row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC)) {
                             $name = $row2["stockitemname"];
                             $price = number_format($row2["recommendedretailprice"] * 1.21 * $quantity,2,".", '');
+                            $totalprices[] = number_format($price, 2, '.', '');
                         }
                         print ("<div class='row'>
                                 <div class='col-5'> $name </div> <div class='col-1'> $quantity</div>
-                                <div class='col-2'> €$price </div> <div class='col-4'> $createdat </div></div><hr>");
-
+                                <div class='text-center col-2'> €$price </div> <div class='col-4'> $createdat </div></div><hr>");
                     }
+                    $totalprice = array_sum($totalprices);
+                    print("<div class='row'>
+                           <div class='h5'>Total price: €" . number_format($totalprice, 2) . "</div></div> ")
                     ?>
                 </p>
             </div>
