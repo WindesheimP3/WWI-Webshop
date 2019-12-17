@@ -100,8 +100,7 @@ while ($row = mysqli_fetch_array($result1, MYSQLI_ASSOC)) {
                 <div class="h6 text-left"> <?php print $email; ?>
                 </div>
                 <br>
-                <a class="h5 text left" class="nav-link" href="profiledata.php"> Change your personal details
-                    WIP </a>
+                <a class="h5 text left" class="nav-link" href="profiledata.php"> Change your personal details</a>
                 <br>
                 <br>
                 <br>
