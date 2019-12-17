@@ -51,12 +51,15 @@ while ($row = mysqli_fetch_array($result1, MYSQLI_ASSOC)) {
                 <h1>Welcome <b><?php print htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
             </div>
         </div>
-        <div class="col">
-            <div class="row">
+        <div class="row">
                 <div class="col-6">
                     <h2>Order details</h2> <br>
                     <h4 class="text-left">Orders</h4>
                     <div class="row">
+                        <div class='col-5 h6'>Order number:</div>
+                        <div class='col-5 h6'>Bought:</div>
+                    </div>
+
                         <?php
                         $sql2 = "SELECT * FROM weborder WHERE user_id = ? ORDER BY created_at DESC LIMIT 10";
                         $stmt2 = mysqli_prepare($connect, $sql2);
@@ -67,46 +70,44 @@ while ($row = mysqli_fetch_array($result1, MYSQLI_ASSOC)) {
                             $orderid = $row["order_id"];
                             $createdat = $row["created_at"];
 
-                            print("
-                        <div class='col-8'>
-                        <a href='orderpage.php?order=$orderid'>
-                        $orderid
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                        $createdat
-                                                </a><br><hr><br>
-                        </div>
-                        "
+                            print("<a href='orderpage.php?order=$orderid'> <div class='row'>
+                                    <div class='col-5'>
+                                      $orderid
+                                      </div>
+                                       <div class='col-5'>
+                                      $createdat 
+                                      </div>
+                                      </div>
+                                      <hr> </a> 
+                            <br><br>"
                             );
                         }
 
                         ?>
+
+                </div>
+                <div class="col">
+                    <div class="h2">Personal details</div>
+                    <br>
+                    <div class="h4 text-left">Name</div>
+                    <div class="h6 text-left"><?php print ($firstname . " " . $lastname); ?>
                     </div>
+                    <br>
+                    <div class="h4 text-left">Address</div>
+                    <div class="h6 text-left"> <?php print ("$street $housenumber <br> $zipcode $city"); ?>
+                    </div>
+                    <br>
+                    <div class="h4 text-left">E-mail address</div>
+                    <div class="h6 text-left"> <?php print $email; ?>
+                    </div>
+                    <br>
+                    <a class="h5 text left" class="nav-link" href="profiledata.php"> Change your personal details</a>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="passwordreset.php" class="btn btn-warning">Reset Your Password</a>
+                    <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
                 </div>
-            <div class="col">
-                <div class="h2">Personal details</div>
-                <br>
-                <div class="h4 text-left">Name</div>
-                <div class="h6 text-left"><?php print ($firstname . " " . $lastname); ?>
-                </div>
-                <br>
-                <div class="h4 text-left">Address</div>
-                <div class="h6 text-left"> <?php print ("$street $housenumber <br> $zipcode $city"); ?>
-                </div>
-                <br>
-                <div class="h4 text-left">E-mail address</div>
-                <div class="h6 text-left"> <?php print $email; ?>
-                </div>
-                <br>
-                <a class="h5 text left" class="nav-link" href="profiledata.php"> Change your personal details</a>
-                <br>
-                <br>
-                <br>
-                <a href="passwordreset.php" class="btn btn-warning">Reset Your Password</a>
-                <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
-            </div>
             </div>
         </div>
     </div>
