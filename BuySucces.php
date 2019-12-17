@@ -8,6 +8,13 @@ include "inc/Header.php";
 // Sidebar
 include 'inc/sidebar.php'
 ?>
+<?php
+require "mollie/initialize.php";
+$payment = $mollie->payments->get($_SESSION["paymentID"]);
+$paymentarray = json_decode(json_encode($payment),true);
+if ($paymentarray['status'] == 'paid') {
+
+    ?>
     <div class="col-10">
     <!-- WEBPAGE CONTENT -->
     <div class="row">
@@ -19,6 +26,8 @@ include 'inc/sidebar.php'
     </div>
     <div class="row">
         <div class="col"></div>
+
+
         <div class="col-6">
             <?php
             if (isset($_SESSION['cart'])) {
@@ -71,7 +80,6 @@ include 'inc/sidebar.php'
                 <div class="col" id="totaalprijs">
                     <h3>Return to the homepage</h3>
                     <form action="index.php" method="post">
-                        <input type="hidden" value="<?php print($TotalPriceInc) ?>" name="EUR">
                         <input type="submit" name="submit" value="Homepage"
                                class="btn btn-success btn-lg btn-block">
                     </form>
@@ -81,7 +89,30 @@ include 'inc/sidebar.php'
         <div class="col"></div>
     </div>
     <br>
-<?php
-unset($_SESSION['cart']);
+    <?php
+    unset($_SESSION['cart']);
+} else { ?>
+    <div class="col-10">
+    <!-- WEBPAGE CONTENT -->
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-10">
+            <br>
+            <br>
+            <h1 class="text-left"><font color="red"> Payment <?php print($paymentarray['status']); ?></font></h1>
+            <br>
+            <br>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col">
+        <a href="Checkout.php" class="btn btn-success btn-lg btn-block">Return to Checkout</a>
+        </div>
+        <div class="col"></div>
+    </div>
+            <?php
+}
+
 include "inc/footer.php";
 ?>

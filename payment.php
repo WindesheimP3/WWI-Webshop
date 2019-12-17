@@ -43,7 +43,7 @@ if (isset($_SESSION['loggedin'])) {
                 "method" => \Mollie\Api\Types\PaymentMethod::IDEAL,
                 "description" => "Order #{$orderId}",
                 "redirectUrl" => "http://localhost/wwi-webshop/BuySucces.php?order_id={$orderId}",
-                "webhookUrl" => "https://webhook.site",
+                "webhookUrl" => "https://webhook.site/50a9ccfa-2af4-4bcc-b50d-1f672a517d0d",
                 "metadata" => [
                     "order_id" => $orderId,
                 ],
@@ -58,6 +58,7 @@ if (isset($_SESSION['loggedin'])) {
              * This request should always be a GET, thus we enforce 303 http response code
              */
             header("Location: " . $payment->getCheckoutUrl(), true, 303);
+            $_SESSION['paymentID'] = $payment->id;
         } else {
             print ("<a href='shopping-cart.php'> Something went wrong, please return</a>");
         }
