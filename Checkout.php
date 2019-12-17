@@ -87,8 +87,8 @@ include "inc/Checkout/Header.php";
                         print("  <h3>Shipment Details</h3>
                     $firstname $lastname <br>
                     $street $housenumber <br>
-                    $zipcode <br>
-                    $city <br>");
+                    $zipcode $city <br>
+                    ");
                     } else {
                         print ("<h3>Shipment Details</h3>
                     <font color=\"red\">You are not logged in.</font>");
