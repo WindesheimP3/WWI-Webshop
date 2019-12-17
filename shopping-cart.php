@@ -52,10 +52,11 @@ include 'inc/header.php';
         <div class='col text-right'>
         <form action='shopping-cart.php' method='post'>
         <label>Amount:
-        <select class=\"custom-select custom-select-sm\" name='EditAmount'>");
+        <select class=\"custom-select custom-select-sm\" name='EditAmount'>
+        <option value='0'>Remove</option>");
              for($i=$Quantity - 5; $i <= $maxquantity and ($i<=10 or $i<=$Quantity + 5);  $i++){
-                 if ($i < 0){
-                     $i=0;
+                 if ($i < 1){
+                     $i=1;
                  }
                  if ($i == $Quantity){
                      print("<option selected value='$i'>$i</option>");
@@ -109,7 +110,13 @@ include 'inc/header.php';
                                 } else {
                                     print(number_format($TotalPriceInc, 2));
                                 } ?></font></h2>
-                        <a  class="btn btn-success btn-lg btn-block" href="Checkout.php">Proceed to checkout</a>
+                        <?php
+                        if ($TotalPriceInc != 0) {
+                            print("<a  class=\"btn btn-success btn-lg btn-block\" role=\"button\" href=\"Checkout.php\">Proceed to checkout</a>");
+                        } else {
+                            print("<a  class=\"btn btn-success btn-lg btn-block disabled\"  tabindex=\"-1\" role=\"button\" aria-disabled=\"true\"href=\"\">Proceed to checkout</a>");
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
