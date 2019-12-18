@@ -131,9 +131,14 @@ a {
 
 #Productknop {
     border-color: deepskyblue;
-    border-style: inset;
     background-color: royalblue;
     border-radius: 10px;
+}
+
+#Productknop2 {
+    border-color: green;
+    border-radius: 10px;
+
 }
 
 #Koopknop {

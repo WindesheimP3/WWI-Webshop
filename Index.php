@@ -12,6 +12,13 @@ include 'inc/header.php';
     <div class="col-10">
         <?php
         include "inc/Regels.php";
+        if (!empty($_POST)){
+        $POST = array_flip($_POST);
+        include "func/cart.php";
+        AddToCart($POST['Add one to cart']);
+        Header("LOCATION: shopping-cart.php");
+        exit;
+        }
         ?>
         <div>
             <h1>Explore our deals!</h1>
@@ -39,6 +46,9 @@ include 'inc/header.php';
                     <img class=\"card\" id='Productvak' src='$path' height='350px' width='350px'>
                     <p id='prijs' class='col text-center'>Now only €" . number_format($price * 1.21, 2) . "</p>
                     <a href=\"productpagina1.php?StockItemID=$StockItemID\" class=\"btn btn-primary col\" id='Productknop'>Go to product!</a>
+                    <form method='post' action='index.php'>
+<input type='submit' name='$StockItemID' value='Add one to cart' class ='btn btn-success col' id='Productknop2'>
+</form>
                     </div> 
                     </div>
                     </div>  
