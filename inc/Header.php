@@ -31,7 +31,13 @@
         <div class="col">
             <a class="nav-link col" href="Profile.php">
                 <img id="Account" src="img/Account.jpg">
-                <p class="text-center">My Profile</p>
+                <?php if (isset($_SESSION['loggedin'])){
+                    $username = $_SESSION['username'];
+                    print ("<p class=\"text-center\">$username</p>");
+                } else {
+                    print ('<p class="text-center">Log-in/register &nbsp</p>');
+                };
+                ?>
             </a>
         </div>
     </nav>

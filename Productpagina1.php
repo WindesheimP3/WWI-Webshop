@@ -51,7 +51,7 @@ if(isset($_POST['addButton'])) {
                     print("                    <input type=\"radio\" name=\"ss1\" id=\"ss1-item-$i\" class=\"slideshow--bullet\" checked=\"checked\"/>
                     <div class=\"slideshow--item\" id=\"Slideshow\">
                         <img src=\"$ImgPath\"
-                             style=\"height: 350px; width: 630px;\"/>");
+                             style=\"height: 350px; width: 350px;\"/>");
                     if ($i == 1) {
                         print("
                         <label for=\"ss1-item-3\" class=\"slideshow--nav slideshow--nav-previous\"></label>
