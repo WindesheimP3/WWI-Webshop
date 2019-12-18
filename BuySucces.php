@@ -79,10 +79,7 @@ if ($paymentarray['status'] == 'paid') {
             <div class="row sticky-top">
                 <div class="col" id="totaalprijs">
                     <h3>Return to the homepage</h3>
-                    <form action="index.php" method="post">
-                        <input type="submit" name="submit" value="Homepage"
-                               class="btn btn-success btn-lg btn-block">
-                    </form>
+                    <a href="Index.php" class="btn btn-success btn-lg btn-block">Return to Homepage</a>
                 </div>
             </div>
         </div>

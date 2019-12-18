@@ -60,11 +60,7 @@ include "inc/Checkout/Header.php";
                             } else {
                                 print(number_format($TotalPriceInc, 2));
                             } ?></font></h2>
-                    <form action="payment.php" method="post">
-                        <input type="hidden" value="<?php print($TotalPriceInc) ?>" name="EUR">
-                        <input type="submit" name="submit" value="Proceed to payment"
-                               class="btn btn-success btn-lg btn-block">
-                    </form>
+
                     <hr>
                     <?php
                     include 'sql-statements/database-connectie.php';
@@ -89,11 +85,18 @@ include "inc/Checkout/Header.php";
                     $street $housenumber <br>
                     $zipcode $city <br>
                     ");
+
                     } else {
                         print ("<h3>Shipment Details</h3>
                     <font color=\"red\">You are not logged in.</font>");
                     }
                     ?>
+                    <hr>
+                    <form action="payment.php" method="post">
+                        <input type="hidden" value="<?php print($TotalPriceInc) ?>" name="EUR">
+                        <input type="submit" name="submit" value="Proceed to payment"
+                               class="btn btn-success btn-lg btn-block">
+                    </form>
 
                 </div>
             </div>
