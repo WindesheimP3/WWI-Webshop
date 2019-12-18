@@ -16,7 +16,9 @@
 <body id="Achtergrond">
 <header id="Headerbalk">
     <nav class="nav">
-                <img src="img\Logo.png" alt="WideWorldImporters" id="Logo">
+        <a href="Index.php" class="nav-item">
+            <img src="img\Logo.png" alt="WideWorldImporters" id="Logo">
+        </a>
     </nav>
 </header>
 <div class="container-fluid">
