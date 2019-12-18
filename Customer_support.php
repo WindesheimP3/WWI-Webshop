@@ -1,7 +1,7 @@
 <?php
 session_start();
 $title = "Klantenservice";
-include 'inc/header.php';
+include 'inc/checkout/header.php';
 ?>
 <div class="col-12">
     <div class="col"></div>
