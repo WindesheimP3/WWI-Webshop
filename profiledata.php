@@ -46,28 +46,7 @@ include 'sql-statements/database-connectie.php';
                 mysqli_stmt_execute($stmt1);
                 $result1 = mysqli_stmt_get_result($stmt1);
 
-                if (mysqli_num_rows($result1) == 0) {
-                    $sql2 = "INSERT INTO account_owner (user_id, first_name, last_name, city, zip_code, streetname, house_number, email_address) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-                    $stmt2 = mysqli_prepare($connect, $sql2);
-                    $param_firstname = trim($_POST["firstname"]);
-                    $param_lastname = trim($_POST["lastname"]);
-                    $param_city = trim($_POST["city"]);
-                    $param_zipcode = trim($_POST["zipcode"]);
-                    $param_address = trim($_POST["address"]);
-                    $param_housenumber = trim($_POST["housenumber"]);
-                    $param_email = trim($_POST["emailaddress"]);
-                    mysqli_stmt_bind_param($stmt2, "isssssss", $_SESSION['id'], $param_firstname, $param_lastname, $param_city, $param_zipcode, $param_address, $param_housenumber, $param_email);
 
-
-                    if (mysqli_stmt_execute($stmt2)) {
-                        // Redirect to login page
-                        header("location: profilepage.php");
-                        mysqli_stmt_close($stmt2);
-                    } else {
-                        echo "1.";
-                    }
-
-                } else {
                     $sql3 = "Update account_owner SET first_name = ?, last_name = ?, city = ?, zip_code = ?, streetname = ?, house_number = ?, email_address = ? where user_id = ?";
                     $stmt3 = mysqli_prepare($connect, $sql3);
                     $param_firstname = trim($_POST["firstname"]);
@@ -88,7 +67,6 @@ include 'sql-statements/database-connectie.php';
                     }
                 }
 
-            }
         }
 
         ?>
