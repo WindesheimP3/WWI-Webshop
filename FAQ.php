@@ -12,7 +12,7 @@ include 'inc/header.php';
     <div class="col-10">
         <!-- WEBPAGE CONTENT -->
         <h1 class="text-center">FAQ </h1>
-        <br> <h3 class="text-center"> -- There are currently no FAQ --</h3>
+        <br> <h3 class="text-center"> -- There are no questions yet, help us improve, by contacting us at our <a href="klantenservice.php"><font color="#00bfff">customer service</font></a> --</h3>
     </div>
 </div>
 
