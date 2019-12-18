@@ -117,7 +117,7 @@ include 'sql-statements/database-connectie.php';
                             <div class="row">
                                 <div class="wrapper">
                                     <h2>Personal Details</h2>
-                                    <p>Please fill in your personal details.</p>
+                                    <p>Change your personal details here.</p>
                                     <form action="profiledata.php" method="post">
                                         <div class="form-group <?php print (!empty($firstname_err)) ? 'has-error' : ''; ?>">
                                             <label>First name</label>
