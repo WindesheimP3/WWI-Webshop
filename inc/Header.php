@@ -16,16 +16,24 @@
 <body id="Achtergrond">
 <header id="Headerbalk">
     <nav class="nav">
-            <a href="Index.php" class="nav-item col-8">
-                <img src="img\Logo.png" alt="WideWorldImporters" id="Logo">
-            </a>
+        <a href="Index.php" class="nav-item col-7">
+            <img src="img\Logo.png" alt="WideWorldImporters" id="Logo">
+        </a>
+        <div class="col">
             <div class="nav-link col"><?php include "inc/search.php" ?></div>
+        </div>
+        <div class="col">
             <a class="nav-link col" href="shopping-cart.php">
                 <img id="Winkelmand" src="img/Winkelmand.png">
+                Shopping Cart
             </a>
+        </div>
+        <div class="col">
             <a class="nav-link col" href="Profile.php">
                 <img id="Account" src="img/Account.jpg">
+                <p class="text-center">My Profile</p>
             </a>
+        </div>
     </nav>
 </header>
 <div class="container-fluid">
