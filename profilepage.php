@@ -115,26 +115,34 @@ include 'sql-statements/database-connectie.php';
 
                 </div>
                 <div class="col">
-                    <div class="h2">Personal details</div>
-                    <br>
-                    <div class="h4 text-left">Name</div>
-                    <div class="h6 text-left"><?php print ($firstname . " " . $lastname); ?>
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col">
+                            <div class="h2 text-left">Personal details</div>
+                            <br>
+                            <div class="h4 text-left">Name</div>
+                            <div class="h6 text-left"><?php print ($firstname . " " . $lastname); ?>
+                            </div>
+                            <br>
+                            <div class="h4 text-left">Address</div>
+                            <div class="h6 text-left"> <?php print ("$street $housenumber <br> $zipcode $city"); ?>
+                            </div>
+                            <br>
+                            <div class="h4 text-left">E-mail address</div>
+                            <div class="h6 text-left"> <?php print $email; ?>
+                            </div>
+                            <br>
+                        </div>
                     </div>
-                    <br>
-                    <div class="h4 text-left">Address</div>
-                    <div class="h6 text-left"> <?php print ("$street $housenumber <br> $zipcode $city"); ?>
-                    </div>
-                    <br>
-                    <div class="h4 text-left">E-mail address</div>
-                    <div class="h6 text-left"> <?php print $email; ?>
-                    </div>
-                    <br>
-                    <a class="h5 text left" class="nav-link" href="profiledata.php"> Change your personal details</a>
-                    <br>
-                    <br>
-                    <br>
-                    <a href="passwordreset.php" class="btn btn-warning">Reset Your Password</a>
-                    <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+                            <a class="h5 text-left" class="nav-link" href="profiledata.php"> Change your personal
+                                details</a>
+                            <br>
+                            <br>
+                            <br>
+                            <a href="passwordreset.php" class="btn btn-warning">Reset Your Password</a>
+                            <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+
+
                 </div>
 
             </div>

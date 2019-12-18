@@ -1,16 +1,11 @@
-<!-- inladen header -->
 <?php
 session_start();
 $title = "Klantenservice";
 include 'inc/header.php';
 ?>
-<!-- Deze div-class zorgt er voor dat de sidebar en webcontent in 1 rij staat -->
-<div class="row">
-    <!-- inladen sidebar -->
-    <?php
-    include 'inc/sidebar.php'
-    ?>
-    <div class="col-10">
+<div class="col-12">
+    <div class="col"></div>
+    <div class="col">
         <!-- WEBPAGE CONTENT -->
         <h1 class="text-center">Customer Service </h1>
         <br>
@@ -23,9 +18,15 @@ include 'inc/header.php';
             <a href="#">Instagram</a><br>
         </h5>
 
+        <br><br><br>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <a href="Checkout.php" class="btn btn-success btn-lg btn-block">Return to Checkout</a>
+            </div>
+            <div class="col"></div>
+        </div>
     </div>
+    <div class="col"></div>
 </div>
-<!-- inladen footer -->
-<?php
-include 'inc/footer.php';
-?>
+</div>
