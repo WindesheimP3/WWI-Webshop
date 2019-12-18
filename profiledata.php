@@ -70,6 +70,7 @@ include 'sql-statements/database-connectie.php';
                 } else {
                     $sql3 = "Update account_owner SET first_name = ?, last_name = ?, city = ?, zip_code = ?, streetname = ?, house_number = ?, email_address = ? where user_id = ?";
                     $stmt3 = mysqli_prepare($connect, $sql3);
+                    $param_firstname = trim($_POST["firstname"]);
                     $param_lastname = trim($_POST["lastname"]);
                     $param_city = trim($_POST["city"]);
                     $param_zipcode = trim($_POST["zipcode"]);
