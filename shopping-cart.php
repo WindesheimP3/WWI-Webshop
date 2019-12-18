@@ -124,6 +124,7 @@ include 'inc/header.php';
         </div>
         <br>
         <?php
+
         include 'sql-statements/database-sluit.php';
         include 'inc/footer.php';
         ?>
