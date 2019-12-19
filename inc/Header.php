@@ -16,19 +16,19 @@
 <body id="Achtergrond">
 <header id="Headerbalk">
     <nav class="nav">
-        <a href="Index.php" class="nav-item col-7">
+        <a href="Index.php" class="nav-item col-5">
             <img src="img\Logo.png" alt="WideWorldImporters" id="Logo">
         </a>
-        <div class="col">
+        <div class="col-3">
             <div class="nav-link col"><?php include "inc/search.php" ?></div>
         </div>
-        <div class="col">
+        <div class="col-2">
             <a class="nav-link col" href="shopping-cart.php">
                 <img id="Winkelmand" src="img/Winkelmand.png">
                 Shopping Cart
             </a>
         </div>
-        <div class="col">
+        <div class="col-2">
             <a class="nav-link col" href="Profile.php">
                 <img id="Account" src="img/Account.jpg">
                 <?php if (isset($_SESSION['loggedin'])){

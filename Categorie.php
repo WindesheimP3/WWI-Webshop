@@ -11,16 +11,17 @@ include 'sql-statements/Database-Connectie.php';
 <div class="row">
     <?php
     // Sidebar
+
     include 'inc/sidebar.php';
     ?>
     <div class="col-10">
-            <?php
-            include "inc/Regels.php";
-            ?>
+        <?php
+        include "inc/Regels.php";
+        ?>
         <div class="row">
             <!-- WEBPAGE CONTENT -->
             <?php
-            if (!empty($_POST)){
+            if (!empty($_POST)) {
                 $POST = array_flip($_POST);
                 include "func/cart.php";
                 AddToCart($POST['Add to cart']);
@@ -61,8 +62,8 @@ include 'sql-statements/Database-Connectie.php';
                 </form>
             </div>
         </div>
-                <div class="row">
-                    <div class="card-deck">
+        <div class="row">
+            <div class="card-deck">
                 <?php
                 include "sql-statements/catagorie/SQL-productPerCategorie.php";
                 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
@@ -70,16 +71,16 @@ include 'sql-statements/Database-Connectie.php';
                     $ItemName = $row["StockItemName"];
                     $price = $row["RecommendedRetailPrice"];
                     include "sql-statements/catagorie/SQL-ProductFoto.php";
-                    while ($row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC)){
-                        $path= $row2["ImgPath"];
+                    while ($row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC)) {
+                        $path = $row2["ImgPath"];
                     }
                     print("    
     <div class='col-4 productcard'>
-<div class=\"card w-100 h-100\" id='Productvak'>
+<div class=\"card w-90 h-100\" id='Productvak'>
 <div class=\"card-body\">
 <h5 class=\"card-title\" id='Productnaam'>$ItemName</h5>
 <img class=\"card\" id='Productvak' src='$path' height='350px' width='350px'>
-<p id='prijs' class='col text-center'>Now only €".number_format($price * 1.21, 2) ."</p>
+<p id='prijs' class='col text-center'>Now only €" . number_format($price * 1.21, 2) . "</p>
 <a href=\"productpagina1.php?StockItemID=$StockItemID\" class=\"btn btn-primary col\" id='Productknop'>Go to product!</a>
 <form method='post' action='Categorie.php?StockGroupID=$StockGroupID'>
 <input type='submit' name='$StockItemID' value='Add to cart' class ='btn btn-success col' id='Productknop2'>
@@ -90,17 +91,20 @@ include 'sql-statements/Database-Connectie.php';
 ");
                 }
                 ?>
-                </div>
             </div>
         </div>
         <div class="row">
-            <h5>&nbsp &nbsp &nbsp</h5>
+            <div class="col">
+            <h5>
             <?php
             include "inc/paging-categorie/paging-navbar.php";
             include "sql-statements/database-Sluit.php";
             ?>
+            </h5>
+            </div>
         </div>
     </div>
+</div>
 
 
 <?php

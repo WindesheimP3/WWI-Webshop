@@ -12,7 +12,7 @@ include 'inc/sidebar.php';
 include 'inc/paging-zoek/paging-start.php';
 ?>
     <!-- WEBPAGE CONTENT -->
-    <div class="col">
+    <div class="col-10">
         <?php
         include "inc/Regels.php";
         ?>
@@ -69,7 +69,7 @@ include 'inc/paging-zoek/paging-start.php';
                             }
                             print (" 
 <div class='col-4 productcard'>    
-<div class=\"card w-100 h-100\" id='Productvak'>
+<div class=\"card w-90 h-100\" id='Productvak'>
 <div class=\"card-body\">
 <h5 class=\"card-title\" id='Productnaam'>$SIname</h5>
 <img class=\"card\" id='Productvak' src='$path' height='350px' width='350px'>
@@ -96,12 +96,15 @@ include 'inc/paging-zoek/paging-start.php';
             ?>
         </div>
         <div class="row">
-            <h5>&nbsp &nbsp &nbsp</h5>
+            <div class="col">
+            <h5>
             <?php
             if (isset($_GET['submit']) AND $_GET['name'] !='') {
                 include "inc/paging-zoek/paging-navbar.php";
             }
             ?>
+            </h5>
+            </div>>
         </div>
         <br><br>
     </div>

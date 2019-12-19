@@ -20,10 +20,10 @@ include 'inc/header.php';
         exit;
         }
         ?>
-        <div>
+
             <h1>Explore our deals!</h1>
             <div class="row">
-                <div class="card-group" id="test">
+                <div class="card-deck" id="test">
                     <?php
                     include 'sql-statements/Database-Connectie.php';
 
@@ -40,7 +40,7 @@ include 'inc/header.php';
                         }
                         print(" 
                     <div class='col-4'>    
-                    <div class=\"card h-100 w-100\" style=\"width: 18rem;\" id='Productvak'>
+                    <div class=\"card h-90 w-100\" style=\"width: 18rem;\" id='Productvak'>
                     <div class=\"card-body\">
                     <h5 class=\"card-title\">$ItemName</h5>
                     <img class=\"card\" id='Productvak' src='$path' height='350px' width='350px'>
@@ -52,14 +52,17 @@ include 'inc/header.php';
                     </div> 
                     </div>
                     </div>  
-                    ");
+                    ");}
+
                         ?>
+                </div>
+            </div>
+
 
 
                         <?php
-                    }
+
                     include 'inc/footer.php';
                     ?>
-                </div>
-            </div>
+
 
