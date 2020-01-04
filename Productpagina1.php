@@ -33,6 +33,15 @@ if(isset($_POST['addButton'])) {
     $QuantityOnHand = $row["QuantityOnHand"];
     $Tags = $row["Tags"];
     $TypicalWeightPerUnit = round($TypicalWeightPerUnit, 2);
+    }
+    if (mysqli_num_rows($result) == 0){
+        print("<div class=\"col\" style=\"padding: 20px;\">
+        <div class=\"row\">
+            <div class=\"col\">
+                <h2>This article is not available</h2><br>
+            </div>
+        </div>");
+    } else {
     ?>
     <div class="col" style="padding: 20px;">
         <div class="row">
@@ -47,28 +56,28 @@ if(isset($_POST['addButton'])) {
                     include "sql-statements/productpagina/SQL-foto.php";
                     $i = 1;
                     while ($row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC)) {
-                    $ImgPath = $row2["ImgPath"];
-                    print("                    <input type=\"radio\" name=\"ss1\" id=\"ss1-item-$i\" class=\"slideshow--bullet\" checked=\"checked\"/>
+                        $ImgPath = $row2["ImgPath"];
+                        print("                    <input type=\"radio\" name=\"ss1\" id=\"ss1-item-$i\" class=\"slideshow--bullet\" checked=\"checked\"/>
                     <div class=\"slideshow--item\" id=\"Slideshow\">
                         <img src=\"$ImgPath\"
                              style=\"height: 350px; width: 350px;\"/>");
-                    if ($i == 1) {
-                        print("
+                        if ($i == 1) {
+                            print("
                         <label for=\"ss1-item-3\" class=\"slideshow--nav slideshow--nav-previous\"></label>
                         <label for=\"ss1-item-2\" class=\"slideshow--nav slideshow--nav-next\"></label>
                     </div>");
-                    } elseif ($i == 2){
-                        print("
+                        } elseif ($i == 2) {
+                            print("
                         <label for=\"ss1-item-1\" class=\"slideshow--nav slideshow--nav-previous\"></label>
                         <label for=\"ss1-item-3\" class=\"slideshow--nav slideshow--nav-next\"></label>
                     </div>");
-                    } else {
-                        print("
+                        } else {
+                            print("
                         <label for=\"ss1-item-2\" class=\"slideshow--nav slideshow--nav-previous\"></label>
                         <label for=\"ss1-item-1\" class=\"slideshow--nav slideshow--nav-next\"></label>
                     </div>");
-                    }
-                    $i++;
+                        }
+                        $i++;
                     }
                     ?>
 
@@ -96,10 +105,12 @@ if(isset($_POST['addButton'])) {
                     }
                     ?>
                 </p>
-                <form method="post" action="Productpagina1.php?StockItemID=<?php print($ItemID)?>">
+                <form method="post" action="Productpagina1.php?StockItemID=<?php print($ItemID) ?>">
                     <div class="row align-items-center">
                         <div class="col">
-                            <button type="submit" class="btn btn-success btn-lg btn-block" id="Koopknop" name="addButton" value="add">Add to cart</button>
+                            <button type="submit" class="btn btn-success btn-lg btn-block" id="Koopknop"
+                                    name="addButton" value="add">Add to cart
+                            </button>
                         </div>
                         <div class="col">
                             <div class="form-group">
@@ -114,7 +125,9 @@ if(isset($_POST['addButton'])) {
                             </div>
                             <input type="hidden" name="StockItemID" value="<?php print($ItemID); ?>">
                         </div>
-                        <div class="col"> <?php if(isset($_POST['addButton'])){print("<font color=\"green\">Succesfully added to cart</font>");} ?></div>
+                        <div class="col"> <?php if (isset($_POST['addButton'])) {
+                                print("<font color=\"green\">Succesfully added to cart</font>");
+                            } ?></div>
                     </div>
                 </form>
                 <br>
@@ -136,7 +149,7 @@ if(isset($_POST['addButton'])) {
                     } else {
                         print ("There is no productinformation about this product.");
                     }
-                    }
+
                     ?>
                 </p>
             </div>
@@ -153,6 +166,7 @@ if(isset($_POST['addButton'])) {
                         if ($row["Tags"] != '[""]') {
                             print ('• ' . $Tags);
                         }
+                    }
                     }
                     ?>
                 </p>

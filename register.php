@@ -143,10 +143,7 @@ include "inc/Header.php";
                     header("Location: profilepage.php");
                 }
             }
-
-
         }
-        mysqli_stmt_close($stmt2);
     }
 
     // Close connection
